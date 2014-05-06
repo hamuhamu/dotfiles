@@ -83,14 +83,3 @@ set wrapscan
 
 "insertモード
 inoremap jj <esc>
-inoremap <C-w> <Esc>:w<CR>
-inoremap <C-Q> <Esc>:q<CR>
-inoremap <C-y> <Esc>yy<CR>
-inoremap <C-d> <Esc>dd<CR>
-inoremap <C-p> <Esc>pp<CR>
-inoremap <C-u> <esc>u
-inoremap <C-j> <Down>
-inoremap <C-k> <Up>
-inoremap <C-h> <Left>
-inoremap <C-l> <Right>
-
