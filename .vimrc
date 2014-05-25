@@ -8,7 +8,7 @@ filetype plugin indent on
 set visualbell t_vb=
 
 
-"muhamu====================
+"====================
 " NeoBundle
 "====================
 if has('vim_starting')
@@ -27,6 +27,7 @@ endif
 
 NeoBundle 'Shougo/vimproc'
 NeoBundle 'Shougo/neosnippet'
+NeoBundle 'Shougo/neosnippet-snippets'
 
 " vim 7.4~
 if v:version >= 740
@@ -42,6 +43,7 @@ else
     inoremap <expr><S-TAB> pumvisible() ? "\<Up>" : "\<S-TAB>"
     inoremap <expr><C-y> neocomplcache#close_popup()
     inoremap <expr><C-e> neocomplcache#cancel_popup()
+    inoremap <expr><CR> neocomplcache#smart_close_popup() . "\<CR>"
     let g:neocomplcache_dictionary_filetype_lists = {
         \ 'default' : '',
         \ 'php' : $HOME . '/.vim/dict/php.dict',
