@@ -6,8 +6,7 @@ filetype off
 filetype plugin indent on
 " ビープ音を無効化
 set visualbell t_vb=
-" ヘルプ日本語化
-helptags ~/.vim/doc
+
 
 "====================
 " NeoBundle
@@ -25,20 +24,46 @@ if neobundle#exists_not_installed_bundles()
     echomsg 'Please execute ":NeoBundleInstall" command.'
 endif
 
+
+NeoBundle 'Shougo/vimproc'
+NeoBundle 'Shougo/neosnippet'
+
+"vim 7.3~
+if v:version >= 730
+    NeoBundle 'Shougo/neocomplete'
+else
+    NeoBundle 'neocomplcache'
+    let g:neocomplcache_enable_at_startup  = 1
+    let g:neocomplcache_enable_auto_select = 0
+    let g:neocomplcache_enable_smart_case  = 1
+    let g:neocomplcache_enable_underbar_completion = 1
+    let g:neocomplcache_enable_camel_case_completion = 1
+    inoremap <expr><TAB> pumvisible() ? "\<Down>" : "\<TAB>"
+    inoremap <expr><S-TAB> pumvisible() ? "\<Up>" : "\<S-TAB>"
+    inoremap <expr><C-y> neocomplcache#close_popup()
+    inoremap <expr><C-e> neocomplcache#cancel_popup()
+    let g:neocomplcache_dictionary_filetype_lists = {
+        \ 'default' : '',
+        \ 'php' : $HOME . '/.vim/dict/php.dict',
+        \ }
+endif
+
 " MarkDown filetype
 augroup PrevimSettings
     autocmd!
     autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
 augroup END
 
-NeoBundle 'tyru/open-browser.vim'
+NeoBundle 'tyru/open-browser'
 NeoBundle 'kannokanno/previm'
+
 
 "====================
 " encoding
 "====================
 set encoding=utf-8
 set termencoding=utf-8
+
 
 "====================
 " tab & indent
@@ -58,6 +83,7 @@ set autoindent
 set smartindent
 " C言語ライクインデント
 set cindent
+
 
 "====================
 " view
@@ -80,6 +106,11 @@ set list
 set listchars=tab:>-,extends:<,trail:-
 " 対応するかっこを表示する
 set showmatch
+set completeopt=menuone
+highlight Pmenu ctermbg=4
+highlight PmenuSel ctermbg=1
+highlight PMenuSbar ctermbg=4
+
 
 "====================
 " comand
@@ -92,6 +123,7 @@ set wildmode=full:list
 set history=100
 " カーソルが何行目の何列目か表示
 set ruler
+
 
 "====================
 " string operation
@@ -112,6 +144,7 @@ set wrapscan
 set pastetoggle=<C-E>
 set clipboard+=unnamed
 
+
 " insertモード
 inoremap jj <esc>
 inoremap <C-j> <Down>
@@ -120,6 +153,3 @@ inoremap <C-h> <Left>
 inoremap <C-l> <Right>
 inoremap { {}<Left>
 inoremap [ []<Left>
-inoremap ( ()<Left>
-inoremap " ""<Left>
-inoremap ' ''<Left>
