@@ -8,7 +8,7 @@ filetype plugin indent on
 set visualbell t_vb=
 
 
-"====================
+"muhamu====================
 " NeoBundle
 "====================
 if has('vim_starting')
@@ -28,8 +28,8 @@ endif
 NeoBundle 'Shougo/vimproc'
 NeoBundle 'Shougo/neosnippet'
 
-"vim 7.3~
-if v:version >= 730
+" vim 7.4~
+if v:version >= 740
     NeoBundle 'Shougo/neocomplete'
 else
     NeoBundle 'neocomplcache'
