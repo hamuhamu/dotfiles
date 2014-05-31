@@ -9,6 +9,14 @@ set visualbell t_vb=
 
 
 "====================
+" encoding
+"====================
+set encoding=utf-8
+set termencoding=utf-8
+set fileencodings=utf-8,euc-jp
+
+
+"====================
 " NeoBundle
 "====================
 if has('vim_starting')
@@ -58,13 +66,6 @@ augroup END
 
 NeoBundle 'tyru/open-browser'
 NeoBundle 'kannokanno/previm'
-
-
-"====================
-" encoding
-"====================
-set encoding=utf-8
-set termencoding=utf-8
 
 
 "====================
