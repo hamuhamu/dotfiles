@@ -1,158 +1,238 @@
-"====================
-" init
-"====================
-set nocompatible
-filetype off
-filetype plugin indent on
-" ビープ音を無効化
-set visualbell t_vb=
+Welcome to StackEdit!	{#welcome}
+=====================
 
 
-"====================
-" encoding
-"====================
-set encoding=utf-8
-set termencoding=utf-8
-set fileencodings=utf-8,euc-jp
+Hello, I am your first Markdown document within **StackEdit**[^stackedit]. Don't delete me, I can be helpful. I can be recovered anyway in the `Utils` tab of the <i class="icon-cog"></i> `Settings` dialog.
+
+----------
 
 
-"====================
-" NeoBundle
-"====================
-if has('vim_starting')
-    set runtimepath+=~/.vim/bundle/neobundle.vim/
-endif
+Documents
+---------
 
-call neobundle#rc(expand('~/.vim/bundle/'))
-filetype plugin indent on
+**StackEdit** stores your documents in your browser, which means all your documents are automatically saved locally and are accessible **offline!**
 
-if neobundle#exists_not_installed_bundles()
-    echomsg 'Not installed bundles : ' .
-                \ string(neobundle#get_not_installed_bundle_names())
-    echomsg 'Please execute ":NeoBundleInstall" command.'
-endif
+> **NOTE:**
+> 
+> - StackEdit is accessible offline after the application has been loaded for the first time.
+> - Your local documents are not shared between different browsers or computers.
+> - Clearing your browser's data may **delete all your local documents!** Make sure your documents are backed up using **Google Drive** or **Dropbox** synchronization (see [<i class="icon-share"></i> Synchronization](#synchronization) section).
 
+#### <i class="icon-file"></i> Create a document
 
-NeoBundle 'Shougo/vimproc'
-NeoBundle 'Shougo/neosnippet'
-NeoBundle 'Shougo/neosnippet-snippets'
+You can create a new document by clicking the <i class="icon-file"></i> button in the navigation bar. It will switch from the current document to the new one.
 
-" vim 7.4~
-if v:version >= 740
-    NeoBundle 'Shougo/neocomplete'
-else
-    NeoBundle 'neocomplcache'
-    let g:neocomplcache_enable_at_startup  = 1
-    let g:neocomplcache_enable_auto_select = 0
-    let g:neocomplcache_enable_smart_case  = 1
-    let g:neocomplcache_enable_underbar_completion = 1
-    let g:neocomplcache_enable_camel_case_completion = 1
-    inoremap <expr><TAB> pumvisible() ? "\<Down>" : "\<TAB>"
-    inoremap <expr><S-TAB> pumvisible() ? "\<Up>" : "\<S-TAB>"
-    inoremap <expr><C-y> neocomplcache#close_popup()
-    inoremap <expr><C-e> neocomplcache#cancel_popup()
-    inoremap <expr><CR> neocomplcache#smart_close_popup() . "\<CR>"
-    let g:neocomplcache_dictionary_filetype_lists = {
-        \ 'default' : '',
-        \ 'php' : $HOME . '/.vim/dict/php.dict',
-        \ }
-endif
+#### <i class="icon-folder-open"></i> Switch to another document
 
-" MarkDown filetype
-augroup PrevimSettings
-    autocmd!
-    autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
-augroup END
+You can list all your local documents and switch from one to another by clicking the <i class="icon-folder-open"></i> button in the navigation bar.
 
-NeoBundle 'tyru/open-browser'
-NeoBundle 'kannokanno/previm'
+#### <i class="icon-pencil"></i> Rename a document
+
+You can rename the current document by clicking the document title in the navigation bar.
+
+#### <i class="icon-trash"></i> Delete a document
+
+You can delete the current document by clicking the <i class="icon-trash"></i> button in the navigation bar.
+
+#### <i class="icon-hdd"></i> Save a document
+
+You can save the current document to a file using the <i class="icon-hdd"></i> `Save as...` sub-menu from the <i class="icon-provider-stackedit"></i> menu.
+
+> **Tip:** See [<i class="icon-share"></i> Publish a document](#publish-a-document) section for a description of the different output formats.
 
 
-"====================
-" tab & indent
-"====================
-" タブを半角スペースにする
-set expandtab
-" 画面上見た目のtabスペース
-set  tabstop=4
-" 実際に挿入されるtabの数
-" 0にsetすることでtabstopと同じ値になる
-set softtabstop=0
-" オートインデントによって挿入されるインデント幅
-set shiftwidth=4
-" 改行時のインデントそろえる
-set autoindent
-" 高度なインデント行う
-set smartindent
-" C言語ライクインデント
-set cindent
+----------
 
 
-"====================
-" view
-"====================
-" シンタックスにハイライトを付ける
-syntax on
-" どこの階層のファイルを編集しているか表示される
-set title
-" 指定した値の行の上下が必ず表示される
-" 999とすることで常にウィンドウの中央となる
-set scrolloff=999
-" カーソルが付いている行にラインを入れる
-set cursorline
-" 行番号表示
-set number
-" タブ、空白、改行を表示
-set list
-" タブ、空白、改行の設定
-" 改行は表示させない設定にしている
-set listchars=tab:>-,extends:<,trail:-
-" 対応するかっこを表示する
-set showmatch
-set completeopt=menuone
-highlight Pmenu ctermbg=4
-highlight PmenuSel ctermbg=1
-highlight PMenuSbar ctermbg=4
+Synchronization
+---------------
+
+**StackEdit** can be combined with **Google Drive** and **Dropbox** to have your documents centralized in the *Cloud*. The synchronization mechanism will take care of uploading your modifications or downloading the latest version of your documents.
+
+> **NOTE:**
+> 
+> - Full access to **Google Drive** or **Dropbox** is required to be able to import any document in StackEdit.
+> - Imported documents are downloaded in your browser and are not transmitted to a server.
+> - If you experience problems exporting documents to Google Drive, check and optionally disable browser extensions, such as Disconnect.
+
+#### <i class="icon-download"></i> Import a document
+
+You can import a document from the *Cloud* by going to the <i class="icon-provider-gdrive"></i> `Google Drive` or the <i class="icon-provider-dropbox"></i> `Dropbox` sub-menu and by clicking `Import from...`. Once imported, your document will be automatically synchronized with the **Google Drive** / **Dropbox** file.
+
+#### <i class="icon-upload"></i> Export a document
+
+You can export any document by going to the <i class="icon-provider-gdrive"></i> `Google Drive` or the <i class="icon-provider-dropbox"></i> `Dropbox` sub-menu and by clicking `Export to...`. Even if your document is already synchronized with **Google Drive** or **Dropbox**, you can export it to a another location. **StackEdit** can synchronize one document with multiple locations.
+
+> **Tip:** Using **Google Drive**, you can create collaborative documents to work in real time with other users. Just check the box `Create a real time collaborative document` in the dialog options when exporting to Google Drive.
+
+#### <i class="icon-refresh"></i> Synchronize a document
+
+Once your document is linked to a **Google Drive** or a **Dropbox** file, **StackEdit** will periodically (every 3 minutes) synchronize it by downloading/uploading any modification. Any conflict will be detected, and a local copy of your document will be created as a backup if necessary.
+
+If you just have modified your document and you want to force the synchronization, click the <i class="icon-refresh"></i> button in the navigation bar.
+
+> **NOTE:** The <i class="icon-refresh"></i> button is disabled when you have no document to synchronize.
+
+#### <i class="icon-refresh"></i> Manage document synchronization
+
+Since one document can be synchronized with multiple locations, you can list and manage synchronized locations by clicking <i class="icon-refresh"></i> `Manage synchronization` in the <i class="icon-provider-stackedit"></i> menu. This will open a dialog box allowing you to add or remove synchronization links that are associated to your document.
+
+> **NOTE:** If you delete the file from **Google Drive** or from **Dropbox**, the document will no longer be synchronized with that location.
+
+----------
 
 
-"====================
-" comand
-"====================
-" コマンドラインモードでファイル名を補完する
-set wildmenu
-" コマンドラインモードでファイル名をリスト表示にする
-set wildmode=full:list
-" コマンドラインの履歴保持数
-set history=100
-" カーソルが何行目の何列目か表示
-set ruler
+Publication
+-----------
+
+Once you are happy with your document, you can publish it on different websites directly from **StackEdit**. As for now, **StackEdit** can publish on **Blogger**, **Dropbox**, **Gist**, **GitHub**, **Google Drive**, **Tumblr**, **WordPress** and on any SSH server.
+
+#### <i class="icon-share"></i> Publish a document
+
+You can publish your document by going to the <i class="icon-share"></i> `Publish on` sub-menu and by choosing a website. In the dialog box, you can choose the publication format:
+
+- Markdown, to publish the Markdown text on a website that can interpret it (**GitHub** for instance),
+- HTML, to publish the document converted into HTML (on a blog for instance),
+- Template, to have a full control of the output.
+
+> **NOTE:** The default template is a simple webpage wrapping your document in HTML format. You can customize it in the `Services` tab of the <i class="icon-cog"></i> `Settings` dialog.
+
+#### <i class="icon-share"></i> Update a publication
+
+After publishing, **StackEdit** will keep your document linked to that publish location so that you can update it easily. Once you have modified your document and you want to update your publication, click on the <i class="icon-share"></i> button in the navigation bar.
+
+> **NOTE:** The <i class="icon-share"></i> button is disabled when the document has not been published yet.
+
+#### <i class="icon-share"></i> Manage document publication
+
+Since one document can be published on multiple locations, you can list and manage publish locations by clicking <i class="icon-share"></i> `Manage publication` in the <i class="icon-provider-stackedit"></i> menu. This will open a dialog box allowing you to remove publication links that are associated to your document.
+
+> **NOTE:** In some cases, if the file has been removed from the website or the blog, the document will no longer be published on that location.
+
+----------
 
 
-"====================
-" string operation
-"====================
-" 検索対象をハイライトする
-set hlsearch
-" 小文字検索に大文字小文字を区別しない
-set ignorecase
-" 大文字が混在する検索に大文字小文字を区別する
-set smartcase
-" 文字入力されるたびに検索を行う
-set incsearch
-" 置換時、同一行に対象の文字列があれば置換を行う
-set gdefault
-" 検索が末尾まで進んだ際、先頭から再び検索する
-set wrapscan
-" ペーストモードのトグル
-set pastetoggle=<C-E>
-set clipboard+=unnamed
+Markdown Extra
+--------------
+
+**StackEdit** supports **Markdown Extra**, which extends **Markdown** syntax with some nice features.
+
+> **Tip:** You can disable any **Markdown Extra** feature in the `Extensions` tab of the <i class="icon-cog"></i> `Settings` dialog.
 
 
-" insertモード
-inoremap jj <esc>
-inoremap <C-j> <Down>
-inoremap <C-k> <Up>
-inoremap <C-h> <Left>
-inoremap <C-l> <Right>
-inoremap { {}<Left>
-inoremap [ []<Left>
+### Tables
+
+**Markdown Extra** has a special syntax for tables:
+
+Item      | Value
+--------- | -----
+Computer  | 1600 USD
+Phone     | 12 USD
+Pipe      | 1 USD
+
+You can specify column alignment with one or two colons:
+
+| Item      |    Value | Qty  |
+| :-------- | --------:| :--: |
+| Computer  | 1600 USD |  5   |
+| Phone     |   12 USD |  12  |
+| Pipe      |    1 USD | 234  |
+
+
+### Definition Lists
+
+**Markdown Extra** has a special syntax for definition lists too:
+
+Term 1
+Term 2
+:   Definition A
+:   Definition B
+
+Term 3
+
+:   Definition C
+
+:   Definition D
+
+	> part of definition D
+
+
+### Fenced code blocks
+
+GitHub's fenced code blocks[^gfm] are also supported with **Prettify** syntax highlighting:
+
+```
+// Foo
+var bar = 0;
+```
+
+> **Tip:** To use **Highlight.js** instead of **Prettify**, just configure the `Markdown Extra` extension in the <i class="icon-cog"></i> `Settings` dialog.
+
+
+### Footnotes
+
+You can create footnotes like this[^footnote].
+
+  [^footnote]: Here is the *text* of the **footnote**.
+
+
+### SmartyPants
+
+SmartyPants converts ASCII punctuation characters into "smart" typographic punctuation HTML entities. For example:
+
+|                  | ASCII                                    | HTML                                |
+ ------------------|------------------------------------------|-------------------------------------
+| Single backticks | `'Isn't this fun?'`                      | &#8216;Isn&#8217;t this fun?&#8217; |
+| Quotes           | `"Isn't this fun?"`                      | &#8220;Isn&#8217;t this fun?&#8221; |
+| Dashes           | `-- is an en-dash and --- is an em-dash` | &#8211; is an en-dash and &#8212; is an em-dash |
+
+
+### Table of contents
+
+You can insert a table of contents using the marker `[TOC]`:
+
+[TOC]
+
+
+### Comments
+
+Usually, comments in Markdown are just standard HTML comments. <!-- like this -->
+**StackEdit** extends HTML comments in order to produce useful, highlighted comments in the preview but not in your exported documents. <!--- This is very useful for collecting feedback in a collaborative document. -->
+
+
+### MathJax
+ 
+You can render *LaTeX* mathematical expressions using **MathJax**, as on [math.stackexchange.com][1]:
+
+The *Gamma function* satisfying $\Gamma(n) = (n-1)!\quad\forall
+n\in\mathbb N$ is via the Euler integral
+
+$$
+\Gamma(z) = \int_0^\infty t^{z-1}e^{-t}dt\,.
+$$
+
+> **Tip:** Make sure you include MathJax into your publications to render mathematical expression correctly. Your page/template should include something like: 
+
+```
+<script type="text/javascript" src="https://stackedit.io/libs/MathJax/MathJax.js?config=TeX-AMS_HTML"></script>
+```
+
+> **NOTE:** You can find more information:
+>
+> - about **Markdown** syntax [here][2],
+> - about **Markdown Extra** extension [here][3],
+> - about **LaTeX** mathematical expressions [here][4],
+> - about **Prettify** syntax highlighting [here][5],
+> - about **Highlight.js** syntax highlighting [here][6].
+
+  [^stackedit]: [StackEdit](https://stackedit.io/) is a full-featured, open-source Markdown editor based on PageDown, the Markdown library used by Stack Overflow and the other Stack Exchange sites.
+
+  [^gfm]: **GitHub Flavored Markdown** (GFM) is supported by StackEdit.
+
+
+  [1]: http://math.stackexchange.com/
+  [2]: http://daringfireball.net/projects/markdown/syntax "Markdown"
+  [3]: https://github.com/jmcmanus/pagedown-extra "Pagedown Extra"
+  [4]: http://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference
+  [5]: https://code.google.com/p/google-code-prettify/
+  [6]: http://highlightjs.org/
