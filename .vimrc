@@ -155,5 +155,5 @@ inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 inoremap <C-h> <Left>
 inoremap <C-l> <Right>
-inoremap { {}<Left>
-inoremap [ []<Left>
+
+nnoremap cp :w !pbcopy<CR>
