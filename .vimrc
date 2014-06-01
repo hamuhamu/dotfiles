@@ -145,7 +145,8 @@ set gdefault
 set wrapscan
 " ペーストモードのトグル
 set pastetoggle=<C-E>
-set clipboard+=unnamed
+set clipboard+=autoselect
+" set clipboard+=unnamed
 
 
 " insertモード
