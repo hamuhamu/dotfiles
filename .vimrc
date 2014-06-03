@@ -151,9 +151,10 @@ set clipboard+=autoselect
 
 " insertモード
 inoremap jj <esc>
-inoremap <C-j> <Down>
-inoremap <C-k> <Up>
-inoremap <C-h> <Left>
-inoremap <C-l> <Right>
+inoremap <C-D> <Del>
+" inoremap <C-j> <Down>
+" inoremap <C-k> <Up>
+" inoremap <C-h> <Left>
+" inoremap <C-l> <Right>
 
 nnoremap cp :w !pbcopy<CR>
