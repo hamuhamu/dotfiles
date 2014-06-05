@@ -69,6 +69,16 @@ NeoBundle 'kannokanno/previm'
 
 
 "====================
+" autocmd
+"====================
+" カーソル位置保存
+autocmd BufWinLeave ?* silent mkview
+autocmd BufWinEnter ?* silent loadview
+set nocursorline
+autocmd InsertEnter,InsertLeave * set cursorline!
+
+
+"====================
 " tab & indent
 "====================
 " タブを半角スペースにする
@@ -113,6 +123,9 @@ set completeopt=menuone
 highlight Pmenu ctermbg=4
 highlight PmenuSel ctermbg=1
 highlight PMenuSbar ctermbg=4
+" iTermのみ挿入時にカーソルを棒状にする
+let &t_SI = "\e]50;CursorShape=1\x7"
+let &t_EI = "\e]50;CursorShape=0\x7"
 
 
 "====================
@@ -157,4 +170,4 @@ inoremap <C-D> <Del>
 " inoremap <C-h> <Left>
 " inoremap <C-l> <Right>
 
-nnoremap cp :w !pbcopy<CR>
+nnoremap copy :w !pbcopy<CR>
