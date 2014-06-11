@@ -58,6 +58,21 @@ else
         \ }
 endif
 
+" QuickRun  Program execute view
+NeoBundle 'thinca/vim-quickrun'
+" :QuickRun {program name}
+
+" runner/vimproc/updatetime で出力バッファの更新間隔をミリ秒で設定できます
+" updatetime が一時的に書き換えられてしまうので注意して下さい
+let g:quickrun_config = {
+\   "_" : {
+\       "runner" : "vimproc",
+\       "runner/vimproc/updatetime" : 60
+\   },
+\}
+
+
+" CtrlP file search
 NeoBundle 'kien/ctrlp.vim'
 " <C-p> ctrlp open
 " Ctrlp 0pened
