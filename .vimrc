@@ -58,7 +58,23 @@ else
         \ }
 endif
 
+NeoBundle 'kien/ctrlp.vim'
+" <C-p> ctrlp open
+" Ctrlp 0pened
+" <C-c> close
+" <C-d> path | file exchange
+" <C-r> regex
+" <C-j> Down
+" <C-k> Up
+" <C-u> Clear
+" <C-n> History
+" <C-p> History
+
+" Match files Full Screen
+let g:ctrlp_max_height = &lines
+
 " MarkDown filetype
+
 augroup PrevimSettings
     autocmd!
     autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
@@ -165,9 +181,5 @@ set clipboard+=autoselect
 " insertモード
 inoremap jj <esc>
 inoremap <C-D> <Del>
-" inoremap <C-j> <Down>
-" inoremap <C-k> <Up>
-" inoremap <C-h> <Left>
-" inoremap <C-l> <Right>
 
 nnoremap copy :w !pbcopy<CR>
