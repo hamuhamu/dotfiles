@@ -60,7 +60,7 @@ endif
 
 NeoBundle 'kien/ctrlp.vim'
 " <C-p> ctrlp open
-" Ctrlp 0pened
+" Ctrlp Opened
 " <C-c> close
 " <C-d> path | file exchange
 " <C-r> regex
@@ -69,6 +69,10 @@ NeoBundle 'kien/ctrlp.vim'
 " <C-u> Clear
 " <C-n> History
 " <C-p> History
+" <C-m> file open
+" <C-t> tab
+" <C-v> vertical
+" <C-s> split
 
 " Match files Full Screen
 let g:ctrlp_max_height = &lines
