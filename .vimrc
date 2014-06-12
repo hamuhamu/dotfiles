@@ -33,7 +33,14 @@ if neobundle#exists_not_installed_bundles()
 endif
 
 
-NeoBundle 'Shougo/vimproc'
+NeoBundle 'Shougo/vimproc', {
+  \ 'build' : {
+    \ 'windows' : 'make -f make_mingw32.mak',
+    \ 'cygwin' : 'make -f make_cygwin.mak',
+    \ 'mac' : 'make -f make_mac.mak',
+    \ 'unix' : 'make -f make_unix.mak',
+  \ },
+\}
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
 
@@ -61,9 +68,6 @@ endif
 " QuickRun  Program execute view
 NeoBundle 'thinca/vim-quickrun'
 " :QuickRun {program name}
-
-" runner/vimproc/updatetime で出力バッファの更新間隔をミリ秒で設定できます
-" updatetime が一時的に書き換えられてしまうので注意して下さい
 let g:quickrun_config = {
 \   "_" : {
 \       "runner" : "vimproc",
@@ -88,15 +92,16 @@ NeoBundle 'kien/ctrlp.vim'
 " Match files Full Screen
 let g:ctrlp_max_height = &lines
 
+" Open Browser
+NeoBundle 'tyru/open-browser'
+" PreVim    MarkDown Preview
+NeoBundle 'kannokanno/previm'
 " MarkDown filetype
-
 augroup PrevimSettings
     autocmd!
     autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
 augroup END
 
-NeoBundle 'tyru/open-browser'
-NeoBundle 'kannokanno/previm'
 
 
 "====================
