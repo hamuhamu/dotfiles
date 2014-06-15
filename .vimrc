@@ -206,4 +206,8 @@ set clipboard+=autoselect
 inoremap jj <esc>
 inoremap <C-D> <Del>
 
+noremap ; :
+noremap : ;
+
+" clipbord copy
 nnoremap copy :w !pbcopy<CR>
