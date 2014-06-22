@@ -13,8 +13,7 @@ set visualbell t_vb=
 "====================
 set encoding=utf-8
 set termencoding=utf-8
-set fileencodings=utf-8,euc-jp
-
+set fileencodings=iso-2022-jp,cp932,sjis,euc-jp,utf-8
 
 "====================
 " NeoBundle
@@ -211,3 +210,8 @@ noremap : ;
 
 " clipbord copy
 nnoremap copy :w !pbcopy<CR>
+
+" yank & cut & paste
+nnoremap <silent> ciy ciw<C-r>0<ESC>:let@/=@1<CR>:noh<CR>
+nnoremap <silent> cy   ce<C-r>0<ESC>:let@/=@1<CR>:noh<CR>
+vnoremap <silent> cy   c<C-r>0<ESC>:let@/=@1<CR>:noh<CR>
