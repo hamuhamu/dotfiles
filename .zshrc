@@ -1,13 +1,30 @@
+####################
+# char set
+####################
 export LANG=ja_JP.UTF-8
 
-autoload colors
+autoload -U colors
 colors
-
-PROMPT="
-%{${fg[yellow]}%}%~%{${reset_color}%} 
-[%n]$ "
+# %~ => ~current directory
+# %n => usernaem %m => hostname %# => usertype(#=root, %=normal)
+PROMPT="%{${fg[green]}%}%~%{${reset_color}%} 
+[%n@%m] %# "
 
  PROMPT2='[%n]> '
+
+####################
+# complete
+####################
+autoload -Uz compinit
+compinit
+
+####################
+# history
+#####################
+HISTFILE="$HOME/.zsh_history"
+HISTSIZE=10000
+SAVEHIST=10000
+
 
 ####################
 # ailias
