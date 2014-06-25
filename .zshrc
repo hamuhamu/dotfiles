@@ -9,8 +9,14 @@ export LANG=ja_JP.UTF-8
 #######################################
 # %~ => ~current directory
 # %n => usernaem %m => hostname %# => usertype(#=root, %=normal)
-PROMPT="%{${fg[green]}%}%~%{${reset_color}%} 
+SUCCESS="^_^"
+FAIL="ToT"
+
+PROMPT=""
+PROMPT+="%(?.${fg[cyan]}$SUCCESS.${fg[red]}$FAIL) "
+PROMPT+="%{${fg[green]}%}%~%{${reset_color}%} 
 [%n@%m] %# "
+
 PROMPT2='[%n]> '
 
 
