@@ -85,9 +85,7 @@ setopt correct
 ######################################
 # ailias
 ######################################
-#alias ls='ls -G'
-#alias ll='ls -lG'
-#alias la='ls -laG'
+alias ll='ls -la'
 alias vi='vim'
 alias cl='clear'
 
