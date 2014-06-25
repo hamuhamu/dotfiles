@@ -3,8 +3,10 @@
 ####################
 export LANG=ja_JP.UTF-8
 
-autoload -U colors
-colors
+####################
+# color
+####################
+autoload -U colors; colors
 # %~ => ~current directory
 # %n => usernaem %m => hostname %# => usertype(#=root, %=normal)
 PROMPT="%{${fg[green]}%}%~%{${reset_color}%} 
@@ -15,15 +17,48 @@ PROMPT="%{${fg[green]}%}%~%{${reset_color}%}
 ####################
 # complete
 ####################
-autoload -Uz compinit
-compinit
+autoload -U compinit; compinit
+# complete after = --prefix=/usr => --prefix=<Tab>
+setopt magic_equal_subst
+# candidate pack
+setopt list_packed
 
 ####################
 # history
 #####################
 HISTFILE="$HOME/.zsh_history"
+# memo
 HISTSIZE=10000
 SAVEHIST=10000
+# command of history duplication ignore
+setopt hist_ignore_all_dups
+# command of <Space>command ignore
+setopt hist_ignore_space
+
+
+
+####################
+# directory
+#####################
+# cd /home => /home cd ../ => ..
+setopt auto_cd
+# dirctory of stack push cd -<Tab>
+setopt auto_pushd
+# directory of stack duplication ignore
+setopt pushd_ignore_dups
+
+
+####################
+# other
+#####################
+# vim like
+bindkey -v
+setopt no_beep
+# command spell correct
+setopt correct
+bindkey 'jj' vi-cmd-mode
+# back ground job state notice
+setopt notify
 
 
 ####################
