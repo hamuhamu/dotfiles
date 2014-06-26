@@ -9,15 +9,15 @@ export LANG=ja_JP.UTF-8
 #######################################
 # %~ => ~current directory
 # %n => usernaem %m => hostname %# => usertype(#=root, %=normal)
-SUCCESS="^_^"
-FAIL="ToT"
+SUCCESS='^_^'
+FAIL='ToT'
 
-PROMPT=""
+PROMPT=''
 PROMPT+="%(?.${fg[cyan]}$SUCCESS.${fg[red]}$FAIL) "
 PROMPT+="%{${fg[green]}%}%~%{${reset_color}%} 
 [%n@%m] %# "
 
-PROMPT2='[%n]> '
+PROMPT2="[%n]> "
 
 
 
@@ -25,7 +25,6 @@ PROMPT2='[%n]> '
 # color
 ######################################
 autoload -U colors; colors
-export CLICOLOR=true
 
 
 ######################################
