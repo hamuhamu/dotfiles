@@ -25,6 +25,7 @@ PROMPT2="[%n]> "
 # color
 ######################################
 autoload -U colors; colors
+export CLICOLOR=true
 
 
 ######################################
