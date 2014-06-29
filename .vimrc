@@ -13,7 +13,7 @@ set visualbell t_vb=
 "====================
 set encoding=utf-8
 set termencoding=utf-8
-set fileencodings=iso-2022-jp,cp932,sjis,euc-jp,utf-8
+set fileencodings=utf-8
 
 "====================
 " NeoBundle
@@ -96,7 +96,7 @@ NeoBundle 'kien/ctrlp.vim'
 let g:ctrlp_max_height = &lines
 
 " Open Browser
-NeoBundle 'tyru/open-browser'
+NeoBundle 'git@github.com:tyru/open-browser.vim.git'
 " PreVim    MarkDown Preview
 NeoBundle 'kannokanno/previm'
 " MarkDown filetype
