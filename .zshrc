@@ -26,6 +26,7 @@ PROMPT2="[%n]> "
 ######################################
 autoload -U colors; colors
 export CLICOLOR=true
+export LSCOLORS=DxGxcxdxCxegedabagacad
 
 
 ######################################
