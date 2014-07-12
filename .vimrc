@@ -74,6 +74,16 @@ let g:quickrun_config = {
 \   },
 \}
 
+" syntax check
+" :w after syntax check
+" :SyntasticInfo perl checker check
+NeoBundle 'scrooloose/syntastic.git'
+let g:syntastic_enable_signs = 1
+let g:syntastic_auto_loc_list = 2
+" perl syntax check enable
+let g:syntastic_enable_perl_checker = 1
+let g:syntastic_perl_checkers = ['perl', 'podchecker']
+
 
 " yank to history reuse
 NeoBundle 'LeafCage/yankround.vim'
