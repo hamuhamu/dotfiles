@@ -31,7 +31,7 @@ if neobundle#exists_not_installed_bundles()
     echomsg 'Please execute ":NeoBundleInstall" command.'
 endif
 
-
+" Async vim
 NeoBundle 'Shougo/vimproc', {
   \ 'build' : {
     \ 'windows' : 'make -f make_mingw32.mak',
@@ -240,8 +240,10 @@ set gdefault
 set wrapscan
 " ペーストモードのトグル
 set pastetoggle=<C-E>
-set clipboard+=autoselect
-" set clipboard+=unnamed
+" yank clipboard copy
+" $shell vim --version | grep clipboard
+" if $shell +clipboard
+set clipboard+=unnamed
 
 
 " insertモード
