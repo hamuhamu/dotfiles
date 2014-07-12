@@ -176,10 +176,12 @@ set title
 " 指定した値の行の上下が必ず表示される
 " 999とすることで常にウィンドウの中央となる
 set scrolloff=999
-" カーソルが付いている行にラインを入れる
 set cursorline
 " 行番号表示
 set number
+" status line 
+set laststatus=2
+set statusline=%<%f\%m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
 " タブ、空白、改行を表示
 set list
 " タブ、空白、改行の設定
