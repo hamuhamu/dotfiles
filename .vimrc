@@ -64,6 +64,16 @@ else
         \ }
 endif
 
+" echo function docments
+NeoBundle 'Shougo/echodoc', '', 'default'
+" insert mode to load
+call neobundle#config('echodoc', {
+\ 'lazy' : 1,
+\ 'autoload' : {
+\ 'insert' : 1,
+\ }})
+
+
 " QuickRun  Program execute view
 NeoBundle 'thinca/vim-quickrun'
 " :QuickRun {program name}
@@ -181,7 +191,9 @@ set cursorline
 set number
 " status line 
 set laststatus=2
-set statusline=%<%f\%m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
+" %f filename encoding %l line %c char
+set statusline=%<%f\%m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%lL,%cC%V%8P
+set cmdheight=2
 " タブ、空白、改行を表示
 set list
 " タブ、空白、改行の設定
