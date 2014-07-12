@@ -75,6 +75,26 @@ let g:quickrun_config = {
 \}
 
 
+" yank to history reuse
+NeoBundle 'LeafCage/yankround.vim'
+" yank history
+let g:yankround_max_history = 35
+let g:yankround_dir = '~/.cache/yankround'
+nmap p <Plug>(yankround-p)
+nmap P <Plug>(yankround-P)
+nmap gp <Plug>(yankround-gp)
+nmap gP <Plug>(yankround-gP)
+" paste after <C-p> yank prev
+nmap <C-p> <Plug>(yankround-prev)
+" paste after <C-n> yank next
+nmap <C-n> <Plug>(yankround-next)
+" ctrlp.vim conflict measures
+nmap <expr><C-p> yankround#is_active() ? "\<Plug>(yankround-prev)" : "<SID>(ctrlp)"
+nnoremap <silent><SID>(ctrlp) :<C-u>CtrlP<CR>
+" paste after g<C-p> yank history
+nnoremap <silent>g<C-p> :<C-u>CtrlPYankRound<CR>
+
+
 " CtrlP file search
 NeoBundle 'kien/ctrlp.vim'
 " <C-p> ctrlp open
@@ -104,7 +124,6 @@ augroup PrevimSettings
     autocmd!
     autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
 augroup END
-
 
 
 "====================
