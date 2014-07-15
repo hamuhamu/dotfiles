@@ -6,7 +6,8 @@ filetype off
 filetype plugin indent on
 " ビープ音を無効化
 set visualbell t_vb=
-
+" no create vim.txt~
+set nobackup
 
 "====================
 " encoding
