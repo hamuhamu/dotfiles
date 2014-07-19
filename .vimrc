@@ -148,6 +148,10 @@ augroup PrevimSettings
 augroup END
 
 
+NeoBundle 'vim-scripts/matchit.zip.git'
+" Uppercase/Lowercase ignore
+let b:match_ignorecase = 1
+
 "====================
 " autocmd
 "====================
