@@ -2,6 +2,12 @@ set mouse=a
 syntax on
 set nohlsearch
 
+" .un~ nocreate
+set noundofile
+
+"====================
+" view
+"====================
 " windows size save
 let g:save_window_file = expand('~/.vimwinpos')
 augroup SaveWindow
