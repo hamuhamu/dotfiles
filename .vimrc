@@ -8,6 +8,8 @@ filetype plugin indent on
 set visualbell t_vb=
 " no create vim.txt~
 set nobackup
+" .un~ nocreate
+set noundofile
 set backspace=indent,eol,start
 
 "====================

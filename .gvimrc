@@ -2,8 +2,8 @@ set mouse=a
 syntax on
 set nohlsearch
 
-" .un~ nocreate
-set noundofile
+" ~ nocreate
+set nobackup
 
 "====================
 " view
