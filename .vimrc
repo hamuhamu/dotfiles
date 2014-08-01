@@ -155,6 +155,10 @@ NeoBundle 'tmhedberg/matchit'
 " Uppercase/Lowercase ignore
 let b:match_ignorecase = 1
 
+" R console for vim
+NeoBundle 'vim-scripts/Vim-R-plugin'
+let vimrplugin_r_path='/usr/bin/R'
+
 
 "====================
 " autocmd

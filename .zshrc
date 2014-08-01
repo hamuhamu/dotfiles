@@ -76,6 +76,8 @@ setopt pushd_ignore_dups
 # vim like
 bindkey -v
 bindkey 'jj' vi-cmd-mode
+zle -A .backward-kill-word vi-backward-kill-word
+zle -A .backward-delete-char vi-backward-delete-char
 # back ground job state notice
 setopt notify
 setopt no_beep
