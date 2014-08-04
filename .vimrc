@@ -11,6 +11,9 @@ set nobackup
 " .un~ nocreate
 set noundofile
 set backspace=indent,eol,start
+" normarmode japanese off
+set imdisable
+
 
 "====================
 " encoding
@@ -262,6 +265,7 @@ set clipboard+=unnamed
 
 " insertモード
 inoremap jj <esc>
+inoremap っｊ <esc>
 inoremap <C-D> <Del>
 
 noremap ; :
