@@ -8,8 +8,13 @@ filetype plugin indent on
 set visualbell t_vb=
 " no create vim.txt~
 set nobackup
-" .un~ nocreate
-set noundofile
+
+" vim 7.4~
+if v:version >= 740
+    " .un~ nocreate
+    set noundofile
+endif
+
 set backspace=indent,eol,start
 " normarmode japanese off
 set imdisable
@@ -30,7 +35,6 @@ if has('vim_starting')
 endif
 
 call neobundle#rc(expand('~/.vim/bundle/'))
-filetype plugin indent on
 
 if neobundle#exists_not_installed_bundles()
     echomsg 'Not installed bundles : ' .
@@ -162,16 +166,24 @@ let b:match_ignorecase = 1
 NeoBundle 'vim-scripts/Vim-R-plugin'
 let vimrplugin_r_path='/usr/bin/R'
 
+NeoBundle 'altercation/vim-colors-solarized'
+syntax enable
+set background=dark
+colorscheme solarized
+"highlight Pmenu ctermbg=4
+"highlight PmenuSel ctermbg=1
+"highlight PMenuSbar ctermbg=4
 
 "====================
 " autocmd
 "====================
-" カーソル位置保存
-autocmd BufWinLeave ?* silent mkview
-autocmd BufWinEnter ?* silent loadview
 set nocursorline
-autocmd InsertEnter,InsertLeave * set cursorline!
-
+" カーソル位置保存
+augroup CursorSave
+  autocmd BufWinLeave ?* silent mkview
+  autocmd BufWinEnter ?* silent loadview
+  autocmd InsertEnter,InsertLeave * set cursorline!
+augroup END
 
 "====================
 " tab & indent
@@ -196,8 +208,6 @@ set cindent
 "====================
 " view
 "====================
-" シンタックスにハイライトを付ける
-syntax on
 " どこの階層のファイルを編集しているか表示される
 set title
 " 指定した値の行の上下が必ず表示される
@@ -219,9 +229,6 @@ set listchars=tab:>-,extends:<,trail:-
 " 対応するかっこを表示する
 set showmatch
 set completeopt=menuone
-highlight Pmenu ctermbg=4
-highlight PmenuSel ctermbg=1
-highlight PMenuSbar ctermbg=4
 " iTermのみ挿入時にカーソルを棒状にする
 let &t_SI = "\e]50;CursorShape=1\x7"
 let &t_EI = "\e]50;CursorShape=0\x7"
@@ -278,3 +285,4 @@ nnoremap copy :w !pbcopy<CR>
 nnoremap <silent> ciy ciw<C-r>0<ESC>:let@/=@1<CR>:noh<CR>
 nnoremap <silent> cy   ce<C-r>0<ESC>:let@/=@1<CR>:noh<CR>
 vnoremap <silent> cy   c<C-r>0<ESC>:let@/=@1<CR>:noh<CR>
+

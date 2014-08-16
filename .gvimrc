@@ -5,9 +5,11 @@ set nohlsearch
 " ~ nocreate
 set nobackup
 
+
 "====================
 " view
 "====================
+set background=light
 " windows size save
 let g:save_window_file = expand('~/.vimwinpos')
 augroup SaveWindow

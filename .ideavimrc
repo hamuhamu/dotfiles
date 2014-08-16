@@ -1,5 +1,6 @@
 " insertモード
 inoremap jj <esc>
+inoremap っｊ <esc>
 inoremap <C-D> <Del>
 
 noremap ; :

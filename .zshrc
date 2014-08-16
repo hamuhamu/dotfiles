@@ -86,6 +86,33 @@ setopt correct
 
 
 ######################################
+# peco
+######################################
+function peco-select-history() {
+    local tac
+    if which tac > /dev/null; then
+        tac="tac"
+    else
+        tac="tail -r"
+    fi
+    BUFFER=$(\history -n 1 | \
+        eval $tac | \
+        peco --query "$LBUFFER")
+    CURSOR=$#BUFFER
+    zle clear-screen
+}
+zle -N peco-select-history
+# control + r => zsh history
+bindkey '^r' peco-select-history
+
+function peco-pushd() {
+  eval cd $(pushd | sed -e "s/ /\n/g" | peco)
+  zle reset-prompt
+}
+zle -N peco-pushd
+bindkey '^a' peco-pushd
+
+######################################
 # ailias
 ######################################
 alias ll='ls -la'
