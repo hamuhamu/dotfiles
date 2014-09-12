@@ -177,7 +177,6 @@ colorscheme solarized
 "====================
 " autocmd
 "====================
-set nocursorline
 " カーソル位置保存
 augroup CursorSave
   autocmd BufWinLeave ?* silent mkview
@@ -275,6 +274,8 @@ inoremap jj <esc>
 inoremap っｊ <esc>
 inoremap <C-D> <Del>
 
+noremap j gj
+noremap k gk
 noremap ; :
 noremap : ;
 
@@ -286,3 +287,6 @@ nnoremap <silent> ciy ciw<C-r>0<ESC>:let@/=@1<CR>:noh<CR>
 nnoremap <silent> cy   ce<C-r>0<ESC>:let@/=@1<CR>:noh<CR>
 vnoremap <silent> cy   c<C-r>0<ESC>:let@/=@1<CR>:noh<CR>
 
+" command history + filtering
+cnoremap <C-p> <Up>
+cnoremap <C-p> <Down>
