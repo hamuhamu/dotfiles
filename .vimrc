@@ -1,13 +1,15 @@
-"====================
-" init
+" init {{{1
 "====================
 set nocompatible
 filetype off
-filetype plugin indent on
+filetype plugin indent off
 " ビープ音を無効化
 set visualbell t_vb=
 " no create vim.txt~
 set nobackup
+set modeline
+" ファイル上下lines分まで検索する
+set modelines=5
 
 " vim 7.4~
 if v:version >= 740
@@ -19,16 +21,13 @@ set backspace=indent,eol,start
 " normarmode japanese off
 set imdisable
 
-
-"====================
-" encoding
+" encoding {{{1
 "====================
 set encoding=utf-8
 set termencoding=utf-8
 set fileencodings=utf-8
 
-"====================
-" NeoBundle
+" NeoBundle {{{1
 "====================
 if has('vim_starting')
     set runtimepath+=~/.vim/bundle/neobundle.vim/
@@ -42,13 +41,16 @@ if neobundle#exists_not_installed_bundles()
     echomsg 'Please execute ":NeoBundleInstall" command.'
 endif
 
+" 日本語help
+NeoBundle 'vim-jp/vimdoc-ja'
+
 " Async vim
 NeoBundle 'Shougo/vimproc', {
   \ 'build' : {
     \ 'windows' : 'make -f make_mingw32.mak',
-    \ 'cygwin' : 'make -f make_cygwin.mak',
-    \ 'mac' : 'make -f make_mac.mak',
-    \ 'unix' : 'make -f make_unix.mak',
+    \ 'cygwin'  : 'make -f make_cygwin.mak',
+    \ 'mac'     : 'make -f make_mac.mak',
+    \ 'unix'    : 'make -f make_unix.mak',
   \ },
 \}
 NeoBundle 'Shougo/neosnippet'
@@ -71,7 +73,7 @@ else
     inoremap <expr><CR> neocomplcache#smart_close_popup() . "\<CR>"
     let g:neocomplcache_dictionary_filetype_lists = {
         \ 'default' : '',
-        \ 'php' : $HOME . '/.vim/dict/php.dict',
+        \ 'php'     : $HOME . '/.vim/dict/php.dict',
         \ }
 endif
 
@@ -174,8 +176,7 @@ colorscheme solarized
 "highlight PmenuSel ctermbg=1
 "highlight PMenuSbar ctermbg=4
 
-"====================
-" autocmd
+" autocmd {{{1
 "====================
 " カーソル位置保存
 augroup CursorSave
@@ -184,8 +185,7 @@ augroup CursorSave
   autocmd InsertEnter,InsertLeave * set cursorline!
 augroup END
 
-"====================
-" tab & indent
+" tab & indent {{{1
 "====================
 " タブを半角スペースにする
 set expandtab
@@ -204,8 +204,7 @@ set smartindent
 set cindent
 
 
-"====================
-" view
+" view {{{1
 "====================
 " どこの階層のファイルを編集しているか表示される
 set title
@@ -233,8 +232,7 @@ let &t_SI = "\e]50;CursorShape=1\x7"
 let &t_EI = "\e]50;CursorShape=0\x7"
 
 
-"====================
-" comand
+" comand {{{1
 "====================
 " コマンドラインモードでファイル名を補完する
 set wildmenu
@@ -246,8 +244,7 @@ set history=100
 set ruler
 
 
-"====================
-" string operation
+" string operation {{{1
 "====================
 " 検索対象をハイライトする
 set hlsearch
@@ -269,6 +266,8 @@ set pastetoggle=<C-E>
 set clipboard+=unnamed
 
 
+" keymap {{{1
+"====================
 " insertモード
 inoremap jj <esc>
 inoremap っｊ <esc>
@@ -289,4 +288,16 @@ vnoremap <silent> cy   c<C-r>0<ESC>:let@/=@1<CR>:noh<CR>
 
 " command history + filtering
 cnoremap <C-p> <Up>
-cnoremap <C-p> <Down>
+cnoremap <C-n> <Down>
+
+filetype plugin indent on
+
+" marker {{{1
+"====================
+" markerは、上下marklines内に設定を記述する必要がある
+" zc 折りたたむ zo あける
+" foldcolumn 左の余白
+
+" vim: foldmethod=marker
+" vim: foldcolumn=3
+" vim: foldlevel=0
