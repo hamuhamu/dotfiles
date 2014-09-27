@@ -107,6 +107,11 @@ let g:syntastic_auto_loc_list = 2
 let g:syntastic_enable_perl_checker = 1
 let g:syntastic_perl_checkers = ['perl', 'podchecker']
 
+" 括弧や引用符の編集ができる
+" visual mode S"   選択範囲"で囲む
+" nolmal mode ds"  "を削除
+" nolmal mode cs"' "を'に変換
+NeoBundle 'tpope/vim-surround'
 
 " yank to history reuse
 NeoBundle 'LeafCage/yankround.vim'
@@ -130,21 +135,6 @@ nnoremap <silent>g<C-p> :<C-u>CtrlPYankRound<CR>
 
 " CtrlP file search
 NeoBundle 'kien/ctrlp.vim'
-" <C-p> ctrlp open
-" Ctrlp Opened
-" <C-c> close
-" <C-d> path | file exchange
-" <C-r> regex
-" <C-j> Down
-" <C-k> Up
-" <C-u> Clear
-" <C-n> History
-" <C-p> History
-" <C-m> file open
-" <C-t> tab
-" <C-v> vertical
-" <C-s> split
-
 " Match files Full Screen
 let g:ctrlp_max_height = &lines
 
@@ -164,6 +154,7 @@ NeoBundle 'tmhedberg/matchit'
 " Uppercase/Lowercase ignore
 let b:match_ignorecase = 1
 
+NeoBundle 'rking/ag.vim'
 " R console for vim
 NeoBundle 'vim-scripts/Vim-R-plugin'
 let vimrplugin_r_path='/usr/bin/R'
@@ -175,7 +166,6 @@ colorscheme solarized
 "highlight Pmenu ctermbg=4
 "highlight PmenuSel ctermbg=1
 "highlight PMenuSbar ctermbg=4
-
 " autocmd {{{1
 "====================
 " カーソル位置保存
@@ -255,7 +245,7 @@ set smartcase
 " 文字入力されるたびに検索を行う
 set incsearch
 " 置換時、同一行に対象の文字列があれば置換を行う
-set gdefault
+"set gdefault
 " 検索が末尾まで進んだ際、先頭から再び検索する
 set wrapscan
 " ペーストモードのトグル
@@ -289,6 +279,10 @@ vnoremap <silent> cy   c<C-r>0<ESC>:let@/=@1<CR>:noh<CR>
 " command history + filtering
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
+
+" カーソル位置の文字列をc*で、置換対象にする
+nnoremap <expr> c* ':%s ;\<' . expand('<cword>') . '\>;gc'
+vnoremap <expr> c* ':s ;\<' . expand('<cword>') . '\>gc;'
 
 filetype plugin indent on
 
