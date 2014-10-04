@@ -163,6 +163,8 @@ NeoBundle 'altercation/vim-colors-solarized'
 syntax enable
 set background=dark
 colorscheme solarized
+set t_Co=256
+
 "highlight Pmenu ctermbg=4
 "highlight PmenuSel ctermbg=1
 "highlight PMenuSbar ctermbg=4
@@ -220,7 +222,6 @@ set completeopt=menuone
 " iTermのみ挿入時にカーソルを棒状にする
 let &t_SI = "\e]50;CursorShape=1\x7"
 let &t_EI = "\e]50;CursorShape=0\x7"
-
 
 " comand {{{1
 "====================
