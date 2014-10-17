@@ -148,7 +148,6 @@ augroup PrevimSettings
     autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
 augroup END
 
-
 " % tag jump extension
 NeoBundle 'tmhedberg/matchit'
 " Uppercase/Lowercase ignore
@@ -174,7 +173,7 @@ set t_Co=256
 augroup CursorSave
   autocmd BufWinLeave ?* silent mkview
   autocmd BufWinEnter ?* silent loadview
-  autocmd InsertEnter,InsertLeave * set cursorline!
+  autocmd InsertEnter,InsertLeave * set cursorline
 augroup END
 
 " tab & indent {{{1
