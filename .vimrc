@@ -25,7 +25,7 @@ set imdisable
 "====================
 set encoding=utf-8
 set termencoding=utf-8
-set fileencodings=utf-8
+set fileencodings=euc-jp,utf-8
 
 " NeoBundle {{{1
 "====================
@@ -152,6 +152,8 @@ augroup END
 NeoBundle 'tmhedberg/matchit'
 " Uppercase/Lowercase ignore
 let b:match_ignorecase = 1
+
+NeoBundle 'Lokaltog/vim-powerline'
 
 NeoBundle 'rking/ag.vim'
 " R console for vim
@@ -281,8 +283,8 @@ cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
 
 " カーソル位置の文字列をc*で、置換対象にする
-nnoremap <expr> c* ':%s ;\<' . expand('<cword>') . '\>;gc'
-vnoremap <expr> c* ':s ;\<' . expand('<cword>') . '\>gc;'
+nnoremap <expr> c* ':%s ;\<' . expand('<cword>') . '\>;'
+vnoremap <expr> c* ':s ;\<' . expand('<cword>') . '\>;'
 
 filetype plugin indent on
 
