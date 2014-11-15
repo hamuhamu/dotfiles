@@ -25,7 +25,7 @@ set imdisable
 "====================
 set encoding=utf-8
 set termencoding=utf-8
-set fileencodings=euc-jp,utf-8
+set fileencodings=utf-8,euc-jp
 
 " NeoBundle {{{1
 "====================
@@ -46,7 +46,8 @@ endif
 
 " 日本語help
 NeoBundle 'vim-jp/vimdoc-ja'
-
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/vimfiler.vim'
 " Async vim
 NeoBundle 'Shougo/vimproc', {
   \ 'build' : {
@@ -151,6 +152,9 @@ augroup PrevimSettings
     autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
 augroup END
 
+" https://github.com/tpope/vim-abolish
+NeoBundle 'tpope/vim-abolish'
+
 " % tag jump extension
 NeoBundle 'tmhedberg/matchit'
 " Uppercase/Lowercase ignore
@@ -169,9 +173,10 @@ set background=dark
 colorscheme solarized
 set t_Co=256
 
-"highlight Pmenu ctermbg=4
-"highlight PmenuSel ctermbg=1
-"highlight PMenuSbar ctermbg=4
+" highlight Pmenu ctermbg=4
+" highlight PmenuSel ctermbg=1
+" highlight PMenuSbar ctermbg=4
+
 " autocmd {{{1
 "====================
 " カーソル位置保存
