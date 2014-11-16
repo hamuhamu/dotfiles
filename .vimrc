@@ -20,7 +20,7 @@ endif
 set backspace=indent,eol,start
 " normarmode japanese off
 set imdisable
-
+let mapleader = ','
 " encoding {{{1
 "====================
 set encoding=utf-8
@@ -48,6 +48,9 @@ endif
 NeoBundle 'vim-jp/vimdoc-ja'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimfiler.vim'
+let g:vimfiler_as_default_explorer = 1
+nnoremap <silent> <Leader>f :VimFilerExplorer<CR>
+
 " Async vim
 NeoBundle 'Shougo/vimproc', {
   \ 'build' : {
@@ -90,6 +93,9 @@ call neobundle#config('echodoc', {
 \ 'insert' : 1,
 \ }})
 
+" visual mode
+" :B Exコマンド(sortなど)
+NeoBundle 'taku-o/vim-vis'
 
 " QuickRun  Program execute view
 NeoBundle 'thinca/vim-quickrun'
@@ -161,6 +167,8 @@ NeoBundle 'tmhedberg/matchit'
 let b:match_ignorecase = 1
 
 NeoBundle 'Lokaltog/vim-powerline'
+NeoBundle 'alpaca-tc/alpaca_powertabline'
+set noshowmode
 
 NeoBundle 'rking/ag.vim'
 " R console for vim

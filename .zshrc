@@ -5,8 +5,20 @@ export LANG=ja_JP.UTF-8
 
 
 ######################################
+# color
+######################################
+autoload -U colors; colors
+export CLICOLOR=true
+export LSCOLORS=exfxcxdxbxegedabagacad
+export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
+
+######################################
 # prompt
 #######################################
+#
+# colorの設定後にpromptの設定をすること！
+# screen時にうまく引き継げない
+#
 # %~ => ~current directory
 # %n => usernaem %m => hostname %# => usertype(#=root, %=normal)
 SUCCESS='^_^'
@@ -18,17 +30,6 @@ PROMPT+="%{${fg[green]}%}%~%{${reset_color}%}
 [%n@%m] %# "
 
 PROMPT2="[%n]> "
-
-
-
-######################################
-# color
-######################################
-autoload -U colors; colors
-export CLICOLOR=true
-export LSCOLORS=exfxcxdxbxegedabagacad
-export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
-
 ######################################
 # complete
 ######################################
@@ -83,7 +84,10 @@ setopt notify
 setopt no_beep
 # command spell correct
 setopt correct
-
+# ^Dでzshを終了しない
+setopt ignore_eof
+# ^Q/^Sのフローコントロールを無効
+setopt no_flow_control
 
 ######################################
 # peco
@@ -118,7 +122,18 @@ bindkey '^a' peco-pushd
 alias ll='ls -la'
 alias vi='vim'
 alias cl='clear'
+alias s='screen'
 
+alias -g A='| ag'
+alias -g G='| grep'
+alias -g X='| xargs'
+alias -g C='| cat'
+alias -g L='| less'
+alias -g H='| head'
+alias -g T='| tail'
+alias -g W='| wc'
 
 PERL_MB_OPT="--install_base \"/Users/y-ohhashi/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/Users/y-ohhashi/perl5"; export PERL_MM_OPT;
+
+

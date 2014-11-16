@@ -1,4 +1,4 @@
-set mouse=a
+" set mouse=a
 syntax on
 set nohlsearch
 
