@@ -3,6 +3,14 @@
 set nocompatible
 filetype off
 filetype plugin indent off
+
+" condition variables
+let g:is_windows = has('win32') || has('win64')
+let g:is_unix = has('unix')
+let g:is_gui = has('gui_running')
+let g:is_terminal = !g:is_gui
+let g:is_unicode = (&termencoding ==# 'utf-8' || &encoding == 'utf-8') && !(exists('g:discard_unicode') && g:discard_unicode != 0)
+"
 " ビープ音を無効化
 set visualbell t_vb=
 " no create vim.txt~
@@ -25,7 +33,8 @@ let mapleader = ','
 "====================
 set encoding=utf-8
 set termencoding=utf-8
-set fileencodings=utf-8,euc-jp
+set fileencodings=utf-8
+scriptencoding utf-8
 
 " NeoBundle {{{1
 "====================
@@ -107,6 +116,25 @@ let g:quickrun_config = {
 \   },
 \}
 
+NeoBundle 'thinca/vim-ref'
+" brew install w3m
+" tar xzvf php_manual_ja.tar.gz
+" mv ~/php-chunked-xhtml ~/.vim/
+ let g:ref_phpmanual_path = $HOME . '/.vim/phpmanual/'
+
+let g:ref_source_webdict_use_cache = 1
+let g:ref_source_webdict_sites = {
+            \ 'alc' : {
+            \   'url' : 'http://eow.alc.co.jp/%s/UTF-8/'
+            \   }
+            \ }
+" 出力フィルタ 先頭から行を削除している
+function! g:ref_source_webdict_sites.alc.filter(output)
+      return join(split(a:output, "\n")[25 :], "\n")
+endfunction
+
+:cnoremap aa Ref webdict alc<Space>
+
 " syntax check
 " :w after syntax check
 " :SyntasticInfo perl checker check
@@ -171,9 +199,6 @@ NeoBundle 'alpaca-tc/alpaca_powertabline'
 set noshowmode
 
 NeoBundle 'rking/ag.vim'
-" R console for vim
-NeoBundle 'vim-scripts/Vim-R-plugin'
-let vimrplugin_r_path='/usr/bin/R'
 
 NeoBundle 'altercation/vim-colors-solarized'
 syntax enable
@@ -192,6 +217,32 @@ augroup CursorSave
   autocmd BufWinLeave ?* silent mkview
   autocmd BufWinEnter ?* silent loadview
   autocmd InsertEnter,InsertLeave * set cursorline
+augroup END
+
+" 単語スペルチェック 間違ったスペルの場合、下線を引いてくれる
+fun! s:SpellConf()
+  redir! => syntax
+  silent syntax
+  redir END
+
+  set spell
+
+  if syntax =~? '/<comment\>'
+    syntax spell default
+    syntax match SpellNotAscii /\<\A\+\>/ contains=@NoSpell transparent containedin=Comment contained
+    syntax match SpellMaybeCode /\<\h\l*[_A-Z]\h\{-}\>/ contains=@NoSpell transparent containedin=Comment contained
+  else
+    syntax spell toplevel
+    syntax match SpellNotAscii /\<\A\+\>/ contains=@NoSpell transparent
+    syntax match SpellMaybeCode /\<\h\l*[_A-Z]\h\{-}\>/ contains=@NoSpell transparent
+  endif
+
+  syntax cluster Spell add=SpellNotAscii,SpellMaybeCode
+endfunc
+
+augroup spell_check
+  autocmd!
+  autocmd BufReadPost,BufNewFile,Syntax * call s:SpellConf()
 augroup END
 
 " tab & indent {{{1
@@ -221,6 +272,8 @@ set title
 " 999とすることで常にウィンドウの中央となる
 set scrolloff=999
 set cursorline
+" 再描画しない
+set lazyredraw
 " 行番号表示
 set number
 " status line 
@@ -272,13 +325,22 @@ set pastetoggle=<C-E>
 " $shell vim --version | grep clipboard
 " if $shell +clipboard
 set clipboard+=unnamed
+" ヤンクなどで + レジスタにも書き込む
+if has('unnamedplus')
+  set clipboard+=unnamedplus
+endif
 
-
+" Buffer {{{1
+"====================
+" 外部でファイルが変更されたら自動で読みなおす
+set autoread
+" 隠れ状態にしない
+set nohidden
+set noswapfile
 " keymap {{{1
 "====================
 " insertモード
 inoremap jj <esc>
-inoremap っｊ <esc>
 inoremap <C-D> <Del>
 
 noremap j gj
@@ -313,3 +375,5 @@ filetype plugin indent on
 " vim: foldmethod=marker
 " vim: foldcolumn=3
 " vim: foldlevel=0
+"
+
