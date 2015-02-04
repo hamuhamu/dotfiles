@@ -6,4 +6,4 @@ export SVN_EDITOR=vim
 export GOPATH=~/go
 export PATH=$PATH:$GOPATH/bin
 
-alias phpunit='~/php/vendor/phpunit/phpunit/phpunit'
+alias phpunit='~/php/vendor/phpunit/phpunit/phpunit --color --verbose'

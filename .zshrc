@@ -7,10 +7,17 @@ export LANG=ja_JP.UTF-8
 ######################################
 # color
 ######################################
-autoload -U colors; colors
+autoload -Uz colors; colors
 export CLICOLOR=true
 export LSCOLORS=exfxcxdxbxegedabagacad
 export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
+
+######################################
+# setting
+######################################
+export SVN_EDITOR=vim
+export GREP_OPTIONS='--color=auto'
+
 
 ######################################
 # prompt
@@ -33,12 +40,16 @@ PROMPT2="[%n]> "
 ######################################
 # complete
 ######################################
-autoload -U compinit; compinit
+# mkdir $HOME/.zsh
+# cd $HOME/.zsh
+# git clone git@github.com:zsh-users/zsh-completions.git
+fpath=($HOME/.zsh/zsh-completions/src(N-/) $fpath)
+autoload -Uz compinit; compinit
 # complete after = --prefix=/usr => --prefix=<Tab>
 setopt magic_equal_subst
 # candidate pack
 setopt list_packed
-
+zstyle ':completion:*:default' menu select=2
 
 ######################################
 # history
@@ -117,12 +128,36 @@ zle -N peco-pushd
 bindkey '^a' peco-pushd
 
 ######################################
+# cdr 移動したディレクトリの履歴
+# cdr -l
+######################################
+autoload -Uz add-zsh-hook
+autoload -Uz chpwd_recent_dirs cdr
+add-zsh-hook chpwd chpwd_recent_dirs
+
+
+zstyle ':completion:*' recent-dirs-insert both
+zstyle ':chpwd:*' recent-dirs-max 500
+zstyle ':chpwd:*' recent-dirs-default true
+zstyle ':chpwd:*' recent-dirs-file "$HOME/.cache/shell/chpwd-recent-dirs"
+zstyle ':chpwd:*' recent-dirs-pushd true
+
+######################################
+# zman
+######################################
+# % zman SEARCH_HISTORY
+function zman() {
+    PAGER="less -g -s '+/^       "$1"'" man zshall
+}
+
+######################################
 # ailias
 ######################################
 alias ll='ls -la'
 alias vi='vim'
 alias cl='clear'
 alias s='screen'
+alias t='tmux'
 
 alias -g A='| ag'
 alias -g G='| grep'
