@@ -156,7 +156,7 @@ function zman() {
 alias ll='ls -la'
 alias vi='vim'
 alias cl='clear'
-alias s='screen'
+alias sc='screen'
 alias t='tmux'
 
 alias -g A='| ag'

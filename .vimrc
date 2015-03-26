@@ -53,6 +53,9 @@ if neobundle#exists_not_installed_bundles()
     echomsg 'Please execute ":NeoBundleInstall" command.'
 endif
 
+" :Encode euc-jp
+command! -nargs=1 Encode :e ++enc=<args>
+
 " 日本語help
 NeoBundle 'vim-jp/vimdoc-ja'
 NeoBundle 'Shougo/unite.vim'
