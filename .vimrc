@@ -208,10 +208,24 @@ syntax enable
 set background=dark
 colorscheme solarized
 set t_Co=256
+NeoBundle 'haya14busa/vim-migemo'
 
-" highlight Pmenu ctermbg=4
-" highlight PmenuSel ctermbg=1
-" highlight PMenuSbar ctermbg=4
+    " EasyMotion Config {{{
+    " https://github.com/Lokaltog/vim-easymotion
+    NeoBundle 'Lokaltog/vim-easymotion'
+    nmap s <Plug>(easymotion-s2)
+    nmap t <Plug>(easymotion-t2)
+    " Tab:ページアップ
+    " S-Tab:ページダウン
+    map  / <Plug>(easymotion-sn)
+    omap / <Plug>(easymotion-tn)
+    map  n <Plug>(easymotion-next)
+    map  N <Plug>(easymotion-prev)
+    " 大文字小文字無視
+    let g:EasyMotion_smartcase = 1
+    " ダウンロード
+    let g:EasyMotion_use_migemo = 1
+     "}}}
 
 " autocmd {{{1
 "====================
