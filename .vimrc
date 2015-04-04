@@ -227,6 +227,8 @@ NeoBundle 'haya14busa/vim-migemo'
     let g:EasyMotion_use_migemo = 1
      "}}}
 
+NeoBundle 'junegunn/vim-easy-align'
+
 " autocmd {{{1
 "====================
 " カーソル位置保存
