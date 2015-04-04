@@ -29,6 +29,8 @@ set backspace=indent,eol,start
 " normarmode japanese off
 set imdisable
 let mapleader = ','
+
+
 " encoding {{{1
 "====================
 set encoding=utf-8
@@ -210,7 +212,7 @@ colorscheme solarized
 set t_Co=256
 NeoBundle 'haya14busa/vim-migemo'
 
-    " EasyMotion Config {{{
+" EasyMotion Config {{{
     " https://github.com/Lokaltog/vim-easymotion
     NeoBundle 'Lokaltog/vim-easymotion'
     nmap s <Plug>(easymotion-s2)
@@ -225,9 +227,15 @@ NeoBundle 'haya14busa/vim-migemo'
     let g:EasyMotion_smartcase = 1
     " ダウンロード
     let g:EasyMotion_use_migemo = 1
-     "}}}
+"}}}
 
-NeoBundle 'junegunn/vim-easy-align'
+" Indent Guides Config {{{
+    NeoBundle 'junegunn/vim-easy-align'
+    let g:indent_guides_enable_on_vim_startup = 1
+
+    let g:indent_guides_color_change_percent = 30
+    let g:indent_guides_guide_size = 1
+"}}}
 
 " autocmd {{{1
 "====================
@@ -374,6 +382,9 @@ nnoremap copy :w !pbcopy<CR>
 nnoremap <silent> ciy ciw<C-r>0<ESC>:let@/=@1<CR>:noh<CR>
 nnoremap <silent> cy   ce<C-r>0<ESC>:let@/=@1<CR>:noh<CR>
 vnoremap <silent> cy   c<C-r>0<ESC>:let@/=@1<CR>:noh<CR>
+
+" 無名レジスタではなく直前にヤンクしたヤンクレジスタからペースト
+nnoremap <C-P> "0p
 
 " command history + filtering
 cnoremap <C-p> <Up>
