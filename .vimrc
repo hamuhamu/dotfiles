@@ -213,6 +213,9 @@ colorscheme solarized
 set t_Co=256
 NeoBundle 'haya14busa/vim-migemo'
 
+NeoBundle 'joonty/vdebug'
+let g:vdebug_force_ascii = 1
+
 " EasyMotion Config {{{
     " https://github.com/Lokaltog/vim-easymotion
     NeoBundle 'Lokaltog/vim-easymotion'
@@ -229,7 +232,6 @@ NeoBundle 'haya14busa/vim-migemo'
     " ダウンロード
     let g:EasyMotion_use_migemo = 1
 "}}}
-
 " Indent Guides Config {{{
     NeoBundle 'junegunn/vim-easy-align'
     let g:indent_guides_enable_on_vim_startup = 1
