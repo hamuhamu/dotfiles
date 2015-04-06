@@ -38,6 +38,7 @@ set termencoding=utf-8
 set fileencodings=utf-8
 scriptencoding utf-8
 
+
 " NeoBundle {{{1
 "====================
 if has('vim_starting')
@@ -221,8 +222,8 @@ NeoBundle 'haya14busa/vim-migemo'
     " S-Tab:ページダウン
     map  / <Plug>(easymotion-sn)
     omap / <Plug>(easymotion-tn)
-    map  n <Plug>(easymotion-next)
-    map  N <Plug>(easymotion-prev)
+    " map  n <Plug>(easymotion-next)
+    " map  N <Plug>(easymotion-prev)
     " 大文字小文字無視
     let g:EasyMotion_smartcase = 1
     " ダウンロード
@@ -395,6 +396,13 @@ nnoremap <expr> c* ':%s ;\<' . expand('<cword>') . '\>;'
 vnoremap <expr> c* ':s ;\<' . expand('<cword>') . '\>;'
 
 filetype plugin indent on
+
+" .vimrc.local {{{1
+
+" ローカル固有のvimrcの設定
+if filereadable(expand('~/.vimrc.local'))
+    source ~/.vimrc.local
+endif
 
 " marker {{{1
 "====================
