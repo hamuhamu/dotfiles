@@ -35,7 +35,7 @@ let mapleader = ','
 "====================
 set encoding=utf-8
 set termencoding=utf-8
-set fileencodings=utf-8
+set fileencodings=utf-8,iso-2022-jp,cp932,euc-jp,ucs-bom
 scriptencoding utf-8
 
 
@@ -377,6 +377,9 @@ noremap j gj
 noremap k gk
 noremap ; :
 noremap : ;
+
+inoremap <C-a> @
+inoremap <C-d> $
 
 " clipbord copy
 nnoremap copy :w !pbcopy<CR>

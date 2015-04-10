@@ -22,6 +22,26 @@ export GREP_OPTIONS='--color=auto'
 ######################################
 # prompt
 #######################################
+
+autoload -Uz vcs_info
+setopt prompt_subst
+# コマンド実行ごとにvcsに問い合わせる
+precmd() { vcs_info }
+# http://tkengo.github.io/blog/2013/05/12/zsh-vcs-info/
+# 変更状態を問い合わせる リポジトリがでかいと重たいのでfalseにしたほうが良い
+zstyle ':vcs_info:git:*' check-for-changes true
+# git statusでクリーンな状態
+# %c => ステージ済みでコミットされていないファイルがあれば stagedstrを呼ぶ
+# %u => ステージされていないファイルがあれば               unstagedstrを呼ぶ
+# %b => カレントブランチ名
+zstyle ':vcs_info:*' formats "%F{green}%c%u[%b]%f"
+zstyle ':vcs_info:git:*' stagedstr "%F{yellow}!"
+zstyle ':vcs_info:git:*' unstagedstr "%F{red}+"
+# rebase 途中だったり merge でコンフリクトが発生したり、何か特別な状況
+zstyle ':vcs_info:*' actionformats '[%b|%a]'
+# 右端のプロンプト
+RPROMPT='${vcs_info_msg_0_}'
+
 #
 # colorの設定後にpromptの設定をすること！
 # screen時にうまく引き継げない
@@ -31,12 +51,13 @@ export GREP_OPTIONS='--color=auto'
 SUCCESS='^_^'
 FAIL='ToT'
 
-PROMPT=''
+PROMPT=""
 PROMPT+="%(?.${fg[cyan]}$SUCCESS.${fg[red]}$FAIL) "
 PROMPT+="%{${fg[green]}%}%~%{${reset_color}%} 
 [%n@%m] %# "
 
 PROMPT2="[%n]> "
+
 ######################################
 # complete
 ######################################
