@@ -38,14 +38,24 @@ set termencoding=utf-8
 set fileencodings=utf-8,iso-2022-jp,cp932,euc-jp,ucs-bom
 scriptencoding utf-8
 
+" vimで編集中のファイルをエンコード変換をかけるコマンドをわかりやすくした
+" Usage :Encode euc-jp
+command! -nargs=1 Encode :e ++enc=<args>
+
 
 " NeoBundle {{{1
 "====================
+
+" vim 7.2以上でなければ、NeoBundleが使えない
+if v:version >= 720
+endif
+
+" Config NeoBundle {{{
+
 if has('vim_starting')
     set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
-" call neobundle#rc(expand('~/.vim/bundle/'))
 call neobundle#begin(expand('~/.vim/bundle/'))
   NeoBundleFetch 'Shougo/neobundle.vim'
 call neobundle#end()
@@ -56,15 +66,19 @@ if neobundle#exists_not_installed_bundles()
     echomsg 'Please execute ":NeoBundleInstall" command.'
 endif
 
-" :Encode euc-jp
-command! -nargs=1 Encode :e ++enc=<args>
+"}}}
 
 " 日本語help
 NeoBundle 'vim-jp/vimdoc-ja'
 NeoBundle 'Shougo/unite.vim'
+
+" Config VimFiler {{{
+
 NeoBundle 'Shougo/vimfiler.vim'
 let g:vimfiler_as_default_explorer = 1
 nnoremap <silent> <Leader>f :VimFilerExplorer<CR>
+
+"}}}
 
 " Async vim
 NeoBundle 'Shougo/vimproc', {
@@ -75,10 +89,15 @@ NeoBundle 'Shougo/vimproc', {
     \ 'unix'    : 'make -f make_unix.mak',
   \ },
 \}
+
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
 
-" vim 7.4~
+" Config NeoComplete / NeoComplcache {{{
+
+" vimのバージョンが 7.4以上ならneocomplete
+"                      未満ならneocomplcache
+
 if v:version >= 740
     NeoBundle 'Shougo/neocomplete'
 else
@@ -98,6 +117,9 @@ else
         \ 'php'     : $HOME . '/.vim/dict/php.dict',
         \ }
 endif
+
+"}}}
+
 
 " echo function docments
 NeoBundle 'Shougo/echodoc', '', 'default'
