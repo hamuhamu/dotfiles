@@ -48,8 +48,8 @@ command! -nargs=1 Encode :e ++enc=<args>
 
 " vim 7.2以上でなければ、NeoBundleが使えない
 if v:version >= 702
-    if filereadable(expand('.vimrc.neobundle'))
-        source .vimrc.neobundle
+    if filereadable(expand('~/dotfiles/.vimrc.neobundle'))
+        source ~/dotfiles/.vimrc.neobundle
     endif
 endif
 

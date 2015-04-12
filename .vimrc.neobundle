@@ -186,6 +186,15 @@ NeoBundle 'haya14busa/vim-migemo'
 NeoBundle 'joonty/vdebug'
 let g:vdebug_force_ascii = 1
 
+" TComment_Vim Config {{{
+    " コメントアウトする
+    " <C-_><C-_> visualで選択範囲をコメント
+    " <C-_>b     複数行コメント
+    " <C-_>p     段落をコメント化
+    " <C-_>i     <C-v>と組み合わせて使う
+    NeoBundle 'tomtom/tcomment_vim'
+
+"}}}
 " EasyMotion Config {{{
     " https://github.com/Lokaltog/vim-easymotion
     NeoBundle 'Lokaltog/vim-easymotion'
@@ -201,6 +210,7 @@ let g:vdebug_force_ascii = 1
     let g:EasyMotion_smartcase = 1
     " ダウンロード
     let g:EasyMotion_use_migemo = 1
+
 "}}}
 " Indent Guides Config {{{
     NeoBundle 'junegunn/vim-easy-align'
@@ -208,3 +218,5 @@ let g:vdebug_force_ascii = 1
 
     let g:indent_guides_color_change_percent = 30
     let g:indent_guides_guide_size = 1
+
+"}}}
