@@ -47,7 +47,7 @@ NeoBundle 'Shougo/neosnippet-snippets'
 "                      未満ならneocomplcache
 
 if v:version >= 704
-    NeoBundle 'Shougo/neocomplete'
+"    NeoBundle 'Shougo/neocomplete'
 else
     NeoBundle 'neocomplcache'
     let g:neocomplcache_enable_at_startup  = 1
@@ -202,8 +202,8 @@ let g:vdebug_force_ascii = 1
     nmap t <Plug>(easymotion-t2)
     " Tab:ページアップ
     " S-Tab:ページダウン
-    map  / <Plug>(easymotion-sn)
-    omap / <Plug>(easymotion-tn)
+    map  g/ <Plug>(easymotion-sn)
+    omap g/ <Plug>(easymotion-tn)
     " map  n <Plug>(easymotion-next)
     " map  N <Plug>(easymotion-prev)
     " 大文字小文字無視

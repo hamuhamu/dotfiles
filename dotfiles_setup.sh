@@ -11,3 +11,5 @@ ln -sf ${HOME}/dotfiles/.zshrc ${HOME}
 ln -sf ${HOME}/dotfiles/.gitconfig ${HOME}
 
 ln -sf ${HOME}/dotfiles/.screenrc ${HOME}
+
+ln -sf ${HOME}/dotfiles/.vim/after/ftplugin ${HOME}/.vim/after/ftplugin
