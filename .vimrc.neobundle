@@ -186,6 +186,12 @@ NeoBundle 'haya14busa/vim-migemo'
 NeoBundle 'joonty/vdebug'
 let g:vdebug_force_ascii = 1
 
+" Alignta Config {{{
+NeoBundle 'h1mesuke/vim-alignta'
+
+"}}}
+
+
 " TComment_Vim Config {{{
     " コメントアウトする
     " <C-_><C-_> visualで選択範囲をコメント
