@@ -217,12 +217,22 @@ vnoremap <expr> c* ':s ;\<' . expand('<cword>') . '\>;'
 
 filetype plugin indent on
 
+
+" template {{{1
+
+augroup Template_PHPUnit
+    autocmd!
+    autocmd BufNewFile *Test.php 0read $HOME/.vim/template/php/PhpUnitTest.php
+augroup END
+
+
 " .vimrc.local {{{1
 
 " ローカル固有のvimrcの設定
 if filereadable(expand('~/.vimrc.local'))
     source ~/.vimrc.local
 endif
+
 
 " marker {{{1
 "====================
