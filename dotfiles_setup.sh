@@ -14,3 +14,5 @@ ln -sf ${HOME}/dotfiles/.screenrc ${HOME}
 
 ln -sf ${HOME}/dotfiles/.vim/after/ftplugin ${HOME}/.vim/after/ftplugin
 ln -sf ${HOME}/dotfiles/.vim/template ${HOME}/.vim/template
+ln -sf ${HOME}/dotfiles/.vim/snippets ${HOME}/.vim/snippets
+

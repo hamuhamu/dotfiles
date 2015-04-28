@@ -38,18 +38,42 @@ NeoBundle 'Shougo/vimproc', {
   \ },
 \}
 
+" Config NeoSnippet {{{
+
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
+NeoBundle "honza/vim-snippets"
 
+" Plugin key-mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+
+" SuperTab like snippets behavior.
+imap <expr><TAB> neosnippet#expandable() <Bar><bar> neosnippet#jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable() <Bar><bar> neosnippet#jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+" For snippet_complete marker.
+if has('conceal')
+  set conceallevel=2 concealcursor=i
+endif
+
+" Enable snipMate compatibility feature.
+let g:neosnippet#enable_snipmate_compatibility = 1
+" 独自snippetsのパス
+let g:neosnippet#snippets_directory='~/.vim/snippets'
+
+
+"}}}
 " Config NeoComplete / NeoComplcache {{{
 
 " vimのバージョンが 7.4以上ならneocomplete
 "                      未満ならneocomplcache
 
-if v:version >= 704
+" if v:version >= 704
+"    環境問題が面倒なのでShougo/neocompleteは今は使ってない
 "    NeoBundle 'Shougo/neocomplete'
-else
-    NeoBundle 'neocomplcache'
+" else
+    NeoBundle 'Shougo/neocomplcache'
     let g:neocomplcache_enable_at_startup  = 1
     let g:neocomplcache_enable_auto_select = 0
     let g:neocomplcache_enable_smart_case  = 1
@@ -64,7 +88,7 @@ else
         \ 'default' : '',
         \ 'php'     : $HOME . '/.vim/dict/php.dict',
         \ }
-endif
+" endif
 
 "}}}
 
