@@ -36,6 +36,7 @@ let mapleader = ','
 set encoding=utf-8
 set termencoding=utf-8
 set fileencodings=utf-8,iso-2022-jp,cp932,euc-jp,ucs-bom
+" vimrcのエンコード
 scriptencoding utf-8
 
 " vimで編集中のファイルをエンコード変換をかけるコマンドをわかりやすくした
@@ -193,6 +194,9 @@ noremap k gk
 noremap ; :
 noremap : ;
 
+" 誤打が多いので、インタラクティブなExモードを無効にする
+nnoremap Q <Nop>
+
 inoremap <C-a> @
 inoremap <C-d> $
 
@@ -216,7 +220,6 @@ nnoremap <expr> c* ':%s ;\<' . expand('<cword>') . '\>;'
 vnoremap <expr> c* ':s ;\<' . expand('<cword>') . '\>;'
 
 filetype plugin indent on
-
 
 " template {{{1
 

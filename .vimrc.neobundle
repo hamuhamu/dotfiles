@@ -23,8 +23,12 @@ NeoBundle 'Shougo/unite.vim'
 " Config VimFiler {{{
 
 NeoBundle 'Shougo/vimfiler.vim'
+
+" vimデフォルトのエクスプローラをvimfilerで置き換える e. 起動できる
 let g:vimfiler_as_default_explorer = 1
-nnoremap <silent> <Leader>f :VimFilerExplorer<CR>
+
+" 自動起動
+" autocmd VimEnter * VimFiler -split -simple -winwidth=30 -no-quit
 
 "}}}
 
@@ -139,6 +143,7 @@ endfunction
 " :w after syntax check
 " :SyntasticInfo perl checker check
 NeoBundle 'scrooloose/syntastic.git'
+" let g:syntastic_debug = 1
 let g:syntastic_enable_signs = 1
 let g:syntastic_auto_loc_list = 2
 " perl syntax check enable
