@@ -223,6 +223,7 @@ filetype plugin indent on
 
 " template {{{1
 
+" BufNewFileイベントは、FileTypeイベント(php,vimなど)の前に実行されるので.vimrcに書くしか無い
 augroup Template_PHPUnit
     autocmd!
     autocmd BufNewFile *Test.php 0read $HOME/.vim/template/php/PhpUnitTest.php
