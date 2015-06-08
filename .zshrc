@@ -71,6 +71,8 @@ setopt magic_equal_subst
 # candidate pack
 setopt list_packed
 zstyle ':completion:*:default' menu select=2
+# 補完時に大文字小文字区別しない
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 ######################################
 # history
@@ -90,7 +92,9 @@ setopt extended_history
 setopt share_history
 # reduce blanks  ls   -l => ls -l
 setopt hist_reduce_blanks
-
+# historyから、使用したコマンドを検索してくれる
+# bck-i-search: の状態で、再度 ^bとすることで、コマンドを遡れる。
+bindkey '^b' history-incremental-pattern-search-backward
 
 ######################################
 # directory
@@ -120,6 +124,8 @@ setopt correct
 setopt ignore_eof
 # ^Q/^Sのフローコントロールを無効
 setopt no_flow_control
+# 日本語ファイル名が表示可能
+setopt print_eight_bit
 
 ######################################
 # peco
@@ -188,6 +194,8 @@ alias -g L='| less'
 alias -g H='| head'
 alias -g T='| tail'
 alias -g W='| wc'
+
+alias gmake='make -f ~/gmake/Makefile'
 
 PERL_MB_OPT="--install_base \"/Users/y-ohhashi/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/Users/y-ohhashi/perl5"; export PERL_MM_OPT;
