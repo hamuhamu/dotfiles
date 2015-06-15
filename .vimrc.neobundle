@@ -230,6 +230,8 @@ NeoBundle 'h1mesuke/vim-alignta'
 
 "}}}
 " EasyMotion Config {{{
+    " 検索しやすくなる
+    "
     " https://github.com/Lokaltog/vim-easymotion
     NeoBundle 'Lokaltog/vim-easymotion'
     nmap s <Plug>(easymotion-s2)
