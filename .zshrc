@@ -130,6 +130,10 @@ setopt print_eight_bit
 ######################################
 # peco
 ######################################
+# control + r
+# .zsh_historyからコマンド履歴をインタラクティブに検索する
+bindkey '^r' peco-select-history
+zle -N peco-select-history
 function peco-select-history() {
     local tac
     if which tac > /dev/null; then
@@ -143,16 +147,7 @@ function peco-select-history() {
     CURSOR=$#BUFFER
     zle clear-screen
 }
-zle -N peco-select-history
-# control + r => zsh history
-bindkey '^r' peco-select-history
 
-function peco-pushd() {
-  eval cd $(pushd | sed -e "s/ /\n/g" | peco)
-  zle reset-prompt
-}
-zle -N peco-pushd
-bindkey '^a' peco-pushd
 
 ######################################
 # cdr 移動したディレクトリの履歴

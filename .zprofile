@@ -2,7 +2,20 @@ if [ -f ~/.zshrc ] ; then
     . ~/.zshrc
 fi
 
+# antigen zshで、モジュールのバージョン管理
+# antigen list
+# antigen update
+# antigen selfupdate
+if [[ -f $HOME/.zsh/antigen/antigen.zsh ]]; then
+    source $HOME/.zsh/antigen/antigen.zsh
+    # モジュール
+    antigen-bundle peco/peco
+
+    antigen-apply
+fi
+
 export SVN_EDITOR=vim
+
 export GOPATH=~/go
 export PATH=$PATH:$GOPATH/bin
 
