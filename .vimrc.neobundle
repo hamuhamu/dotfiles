@@ -226,6 +226,15 @@ NeoBundle 'h1mesuke/vim-alignta'
     inoremap <expr> = smartchr#loop(' = ', ' == ', ' === ', '=')
 "}}}
 
+" {{{ vim-toggle
+    " trueからfalseなど、対となるワードへトグルが出来る
+    " normal  = > +
+    " insert <C-T>
+    NeoBundle 'taku-o/vim-toggle'
+    let g:toggle_pairs = {'and' : 'or', 'or' : 'and'}
+
+"}}}
+
 " TComment_Vim Config {{{
     " コメントアウトする
     " <C-_><C-_> visualで選択範囲をコメント
