@@ -219,6 +219,12 @@ NeoBundle 'h1mesuke/vim-alignta'
 
 "}}}
 
+" {{{ vim-smartchr
+    " = の前後にスペースをいれたりする
+    " http://rochefort.hatenablog.com/entry/20101125/p1
+    NeoBundle 'kana/vim-smartchr'
+    inoremap <expr> = smartchr#loop(' = ', ' == ', ' === ', '=')
+"}}}
 
 " TComment_Vim Config {{{
     " コメントアウトする
