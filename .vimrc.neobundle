@@ -18,7 +18,7 @@ endif
 " 日本語help
 NeoBundle 'vim-jp/vimdoc-ja'
 NeoBundle 'Shougo/unite.vim'
-
+NeoBundle 'Shougo/neomru.vim'
 " Config VimFiler {{{
 
 NeoBundle 'Shougo/vimfiler.vim'
@@ -27,7 +27,7 @@ NeoBundle 'Shougo/vimfiler.vim'
 let g:vimfiler_as_default_explorer = 1
 
 " 自動起動
-" autocmd VimEnter * VimFiler -split -simple -winwidth=30 -no-quit
+autocmd VimEnter * VimFiler -split -simple -winwidth=30 -no-quit
 
 "}}}
 
