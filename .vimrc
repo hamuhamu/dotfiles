@@ -199,6 +199,8 @@ nnoremap Q <Nop>
 
 inoremap <C-a> @
 inoremap <C-d> $
+inoremap <C-p><C-l> +
+inoremap <C-m><C-i> -
 
 " clipbord copy
 nnoremap copy :w !pbcopy<CR>
