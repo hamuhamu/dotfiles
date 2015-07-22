@@ -196,6 +196,8 @@ noremap : ;
 
 " 誤打が多いので、インタラクティブなExモードを無効にする
 nnoremap Q <Nop>
+" ウィンドウ移動をTabで行える
+nnoremap <Tab> <C-w>w
 
 inoremap <C-a> @
 inoremap <C-d> $
