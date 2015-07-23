@@ -3,6 +3,8 @@
 [alias]
     st = status
     df = diff
+    df2 = diff HEAD~
+    df3 = diff HEAD~~
     co = checkout
     ci = commit
     br = branch
@@ -10,3 +12,4 @@
     df-word = diff --word-diff
 [core]
     excludesfile = ~/.gitignore
+    editor = vim -c \"set fenc=utf-8\"
