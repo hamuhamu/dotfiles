@@ -124,6 +124,8 @@ setopt correct
 setopt ignore_eof
 # ^Q/^Sのフローコントロールを無効
 setopt no_flow_control
+# vimで<C-q>や<C-s>を使えるようにする
+stty -ixon -ixoff
 # 日本語ファイル名が表示可能
 setopt print_eight_bit
 

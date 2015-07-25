@@ -199,10 +199,17 @@ nnoremap Q <Nop>
 " ウィンドウ移動をTabで行える
 nnoremap <Tab> <C-w>w
 
+" 記号は押しにくいのでmapを貼る
 inoremap <C-a> @
 inoremap <C-d> $
 inoremap <C-p><C-l> +
 inoremap <C-m><C-i> -
+inoremap <C-e><C-q> =
+
+" 複数ファイルを同時に終了・保存する
+nnoremap <C-q><C-q> :qa<CR>
+nnoremap <C-w><C-w> :wa<CR>
+nnoremap <C-w><C-q> :wqa<CR>
 
 " clipbord copy
 nnoremap copy :w !pbcopy<CR>
