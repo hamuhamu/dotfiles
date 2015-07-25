@@ -227,7 +227,7 @@ NeoBundle 'h1mesuke/vim-alignta'
     " = の前後にスペースをいれたりする
     " http://rochefort.hatenablog.com/entry/20101125/p1
     NeoBundle 'kana/vim-smartchr'
-    inoremap <expr> = smartchr#loop(' = ', ' == ', ' === ', '=')
+    " inoremap <expr> = smartchr#loop(' = ', ' == ', ' === ', '=')
 "}}}
 " {{{ vim-toggle
     " trueからfalseなど、対となるワードへトグルが出来る

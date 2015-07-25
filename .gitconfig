@@ -1,6 +1,7 @@
 [push]
     default = matching
 [alias]
+    ad = add -u
     st = status
     df = diff
     df2 = diff HEAD~
