@@ -18,9 +18,10 @@ export SVN_EDITOR=vim
 
 export GOPATH=~/go
 export PATH=$PATH:$GOPATH/bin
-export PATH=$PATH:~/bin
+export PATH=$PATH:$HOME/bin
 
-alias phpunit='~/php/vendor/phpunit/phpunit/phpunit --color --verbose'
+# cd ~/bin
+# wget https://phar.phpunit.de/phpunit.phar -O phpunit
 
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
