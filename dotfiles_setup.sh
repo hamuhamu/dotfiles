@@ -12,7 +12,9 @@ ln -sf ${HOME}/dotfiles/.gitconfig ${HOME}
 
 ln -sf ${HOME}/dotfiles/.screenrc ${HOME}
 
-ln -sf ${HOME}/dotfiles/.vim/after/ftplugin ${HOME}/.vim/after/ftplugin
-ln -sf ${HOME}/dotfiles/.vim/template ${HOME}/.vim/template
-ln -sf ${HOME}/dotfiles/.vim/snippets ${HOME}/.vim/snippets
+mkdir -p ${HOME}/.vim/
+ln -sfn ${HOME}/dotfiles/.vim/template ${HOME}/.vim/template
+ln -sfn ${HOME}/dotfiles/.vim/snippets ${HOME}/.vim/snippets
 
+mkdir -p ${HOME}/.vim/after/
+ln -sfn ${HOME}/dotfiles/.vim/after/ftplugin ${HOME}/.vim/after/ftplugin
