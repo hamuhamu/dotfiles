@@ -12,7 +12,18 @@ ln -sf ${HOME}/dotfiles/.gitconfig ${HOME}
 
 ln -sf ${HOME}/dotfiles/.screenrc ${HOME}
 
+#######################################################################
+# vimの設定
+#######################################################################
 mkdir -p ${HOME}/.vim/
+mkdir -p ${HOME}/.vim/bundle
+
+# NeoBundleのインストール
+if [ ! -d ${HOME}/.vim/bundle/neobundle.vim ]; then
+    echo "$file found."
+    git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
+fi
+
 ln -sfn ${HOME}/dotfiles/.vim/template ${HOME}/.vim/template
 ln -sfn ${HOME}/dotfiles/.vim/snippets ${HOME}/.vim/snippets
 
