@@ -203,7 +203,8 @@ NeoBundle 'tmhedberg/matchit'
 " Uppercase/Lowercase ignore
 let b:match_ignorecase = 1
 
-NeoBundle 'Lokaltog/vim-powerline'
+"NeoBundle 'Lokaltog/vim-powerline'
+NeoBundle 'powerline/powerline'
 NeoBundle 'alpaca-tc/alpaca_powertabline'
 set noshowmode
 
