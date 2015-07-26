@@ -181,7 +181,7 @@ alias ll='ls -la'
 alias vi='vim'
 alias cl='clear'
 alias sc='screen'
-alias t='tmux'
+alias tm='tmux'
 
 alias -g A='| ag'
 alias -g G='| grep'

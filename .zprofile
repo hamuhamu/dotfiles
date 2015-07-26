@@ -22,6 +22,7 @@ export PATH=$PATH:$HOME/bin
 
 # cd ~/bin
 # wget https://phar.phpunit.de/phpunit.phar -O phpunit
+alias phpunit='phpunit --colors'
 
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
