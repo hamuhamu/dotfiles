@@ -43,3 +43,4 @@ eval "$(plenv init -)"
 
 export PATH="$HOME/.phpenv/bin:$PATH"
 eval "$(phpenv init -)"
+#export PLENV_VERSION=5.5.9
