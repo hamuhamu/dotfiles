@@ -20,9 +20,6 @@ export GOPATH=~/go
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$HOME/bin
 
-# cd ~/bin
-# wget https://phar.phpunit.de/phpunit.phar -O phpunit
-alias phpunit='phpunit --colors'
 
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
@@ -44,3 +41,7 @@ eval "$(plenv init -)"
 export PATH="$HOME/.phpenv/bin:$PATH"
 eval "$(phpenv init -)"
 #export PLENV_VERSION=5.5.9
+
+if [ -f ~/.zprofile.local ] ; then
+    . ~/.zshrc.local
+fi
