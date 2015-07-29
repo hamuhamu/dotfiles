@@ -3,9 +3,15 @@
 [alias]
     ad = add -u
     st = status
+    # ********************
+    # branch
+    # ********************
     df = diff
     df2 = diff HEAD~
     df3 = diff HEAD~~
+    # 単語単位のdiff
+    dw = diff --color-words
+    ds = diff --staged
     co = checkout
     ci = commit
     br = branch
