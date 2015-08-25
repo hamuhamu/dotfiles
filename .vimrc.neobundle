@@ -63,7 +63,6 @@ NeoBundle 'Shougo/vimproc', {
     \ 'unix'    : 'make -f make_unix.mak',
   \ },
 \}
-
 " Config NeoSnippet {{{
 
 NeoBundle 'Shougo/neosnippet'
@@ -140,6 +139,14 @@ let g:quickrun_config['_']['runner/vimproc/updatetime'] = 100
 
 "}}}
 
+" webapi-vim {{{
+NeoBundle 'mattn/webapi-vim'
+" }}}
+"excitetranslate {{{
+NeoBundle 'mattn/excitetranslate-vim'
+" 起動に時間がかかるので注意
+nnoremap <silent> etr :<C-u>ExciteTranslate<CR>
+" }}}
 NeoBundle 'thinca/vim-ref'
 " brew install w3m
 " tar xzvf php_manual_ja.tar.gz
