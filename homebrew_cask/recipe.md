@@ -7,3 +7,4 @@ brew cask install slack
 brew cask install caffeine
 brew cask install alfred
 brew cask install evernote
+brew cask install java
