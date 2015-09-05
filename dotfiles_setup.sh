@@ -11,6 +11,7 @@ ln -sf ${HOME}/dotfiles/.zshrc ${HOME}
 ln -sf ${HOME}/dotfiles/.gitconfig ${HOME}
 
 ln -sf ${HOME}/dotfiles/.screenrc ${HOME}
+ln -sf ${HOME}/dotfiles/.tmux.conf ${HOME}
 
 #######################################################################
 # vimの設定
