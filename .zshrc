@@ -158,7 +158,8 @@ function peco-select-history() {
 autoload -Uz add-zsh-hook
 autoload -Uz chpwd_recent_dirs cdr
 add-zsh-hook chpwd chpwd_recent_dirs
-
+# 履歴保存用のディレクトリ作成
+mkdir -p $HOME/.cache/shell/
 
 zstyle ':completion:*' recent-dirs-insert both
 zstyle ':chpwd:*' recent-dirs-max 500
