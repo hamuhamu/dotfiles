@@ -64,29 +64,29 @@ augroup CursorSave
 augroup END
 
 " 単語スペルチェック 間違ったスペルの場合、下線を引いてくれる
+set spelllang=en,cjk
+
 fun! s:SpellConf()
-  redir! => syntax
-  silent syntax
-  redir END
+    redir! => syntax
+    silent syntax
+    redir END
 
-  set spell
+    set spell
 
-  if syntax =~? '/<comment\>'
-    syntax spell default
-    syntax match SpellNotAscii /\<\A\+\>/ contains=@NoSpell transparent containedin=Comment contained
-    syntax match SpellMaybeCode /\<\h\l*[_A-Z]\h\{-}\>/ contains=@NoSpell transparent containedin=Comment contained
-  else
-    syntax spell toplevel
-    syntax match SpellNotAscii /\<\A\+\>/ contains=@NoSpell transparent
-    syntax match SpellMaybeCode /\<\h\l*[_A-Z]\h\{-}\>/ contains=@NoSpell transparent
-  endif
+    if syntax =~? '/<comment\>'
+        syntax spell default
+        syntax match SpellMaybeCode /\<\h\l*[_A-Z]\h\{-}\>/ contains=@NoSpell transparent containedin=Comment contained
+    else
+        syntax spell toplevel
+        syntax match SpellMaybeCode /\<\h\l*[_A-Z]\h\{-}\>/ contains=@NoSpell transparent
+    endif
 
-  syntax cluster Spell add=SpellNotAscii,SpellMaybeCode
+    syntax cluster Spell add=SpellNotAscii,SpellMaybeCode
 endfunc
 
 augroup spell_check
-  autocmd!
-  autocmd BufReadPost,BufNewFile,Syntax * call s:SpellConf()
+    autocmd!
+    autocmd BufReadPost,BufNewFile,Syntax * call s:SpellConf()
 augroup END
 
 " tab & indent {{{1
@@ -120,7 +120,7 @@ set cursorline
 set lazyredraw
 " 行番号表示
 set number
-" status line 
+" status line
 set laststatus=2
 " %f filename encoding %l line %c char
 set statusline=%<%f\%m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%lL,%cC%V%8P
