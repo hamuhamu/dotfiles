@@ -261,6 +261,9 @@ NeoBundle 'haya14busa/vim-migemo'
 NeoBundle 'joonty/vdebug'
 let g:vdebug_force_ascii = 1
 
+" {{{ editorconfig
+    NeoBundle 'editorconfig/editorconfig-vim'
+"}}}
 " {{{ vim-smartchr
     " = の前後にスペースをいれたりする
     " http://rochefort.hatenablog.com/entry/20101125/p1
