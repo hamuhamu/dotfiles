@@ -22,3 +22,5 @@ brew install peco
 brew install libjpeg
 brew install re2c
 brew install libpng
+
+brew tap homebrew/versions
