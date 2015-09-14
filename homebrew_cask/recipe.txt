@@ -21,4 +21,4 @@ brew install peco
 # phpの>=5.69をインストールする際に使う
 brew install libjpeg
 brew install re2c
-brew install bison
+brew install libpng
