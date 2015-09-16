@@ -21,7 +21,7 @@ export PATH=/usr/local:$PATH
 export GOPATH=~/go
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$HOME/bin
-
+export PATH=$PATH:$HOME/.composer/vendor/bin
 
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
