@@ -13,6 +13,7 @@ brew cask install hyperswitch
 brew cask install rstudio
 brew cask install bettertouchtool
 brew cask install mou
+brew cask install shiftit
 
 brew install go
 brew tap peco/peco
