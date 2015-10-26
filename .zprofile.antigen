@@ -1,0 +1,16 @@
+#!/bin/zsh
+# antigen zshで、モジュールのバージョン管理
+# antigen list
+# antigen update
+# antigen selfupdate
+if [ ! -f $HOME/.zsh/antigen/antigen.zsh ]; then
+    mkdir -p $HOME/.zsh/antigen
+    curl -L https://raw.githubusercontent.com/zsh-users/antigen/master/antigen.zsh > $HOME/.zsh/antigen/antigen.zsh
+fi
+
+source $HOME/.zsh/antigen/antigen.zsh
+# モジュール
+antigen-bundle peco/peco
+antigen-bundle zsh-users/zsh-syntax-highlighting
+
+antigen-apply
