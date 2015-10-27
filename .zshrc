@@ -53,7 +53,7 @@ FAIL='ToT'
 
 PROMPT=""
 PROMPT+="%(?.${fg[cyan]}$SUCCESS.${fg[red]}$FAIL) "
-PROMPT+="%{${fg[green]}%}%~%{${reset_color}%} 
+PROMPT+="%{${fg[green]}%}%~%{${reset_color}%}
 [%n@%m] %# "
 
 PROMPT2="[%n]> "
@@ -166,6 +166,18 @@ zstyle ':chpwd:*' recent-dirs-max 500
 zstyle ':chpwd:*' recent-dirs-default true
 zstyle ':chpwd:*' recent-dirs-file "$HOME/.cache/shell/chpwd-recent-dirs"
 zstyle ':chpwd:*' recent-dirs-pushd true
+
+
+######################################
+# cdd
+######################################
+
+if [[ -f $HOME/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-m4i-SLASH-cdd.git/cdd ]]; then
+    source $HOME/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-m4i-SLASH-cdd.git/cdd
+    touch $CDD_FILE
+    autoload -Uz add-zsh-hook
+    add-zsh-hook chpwd _cdd_chpwd
+fi
 
 ######################################
 # zman

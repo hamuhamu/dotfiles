@@ -12,5 +12,6 @@ source $HOME/.zsh/antigen/antigen.zsh
 # モジュール
 antigen-bundle peco/peco
 antigen-bundle zsh-users/zsh-syntax-highlighting
+antigen-bundle m4i/cdd
 
 antigen-apply
