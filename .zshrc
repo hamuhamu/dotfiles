@@ -65,7 +65,7 @@ PROMPT2="[%n]> "
 # cd $HOME/.zsh
 # git clone git@github.com:zsh-users/zsh-completions.git
 fpath=($HOME/.zsh/zsh-completions/src(N-/) $fpath)
-autoload -Uz compinit; compinit
+autoload -Uz compinit; compinit -u
 # complete after = --prefix=/usr => --prefix=<Tab>
 setopt magic_equal_subst
 # candidate pack
