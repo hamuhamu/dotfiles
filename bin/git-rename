@@ -11,3 +11,4 @@ if [ -z "$NEW_BRANCH_NAME" ]; then
 fi
 
 git branch -m $CURRENT_BRANCH_NAME $NEW_BRANCH_NAME
+exit 0
