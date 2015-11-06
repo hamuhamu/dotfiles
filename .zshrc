@@ -179,6 +179,23 @@ if [[ -f $HOME/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-m4i-SLA
     add-zsh-hook chpwd _cdd_chpwd
 fi
 
+
+######################################
+# ghq
+######################################
+function peco-ghq-list () {
+    local selected_dir=$(ghq list -p | peco --query "$LBUFFER")
+    if [ -n "$selected_dir" ]; then
+        BUFFER="cd ${selected_dir}"
+        zle accept-line
+    fi
+
+    zle clear-screen
+}
+
+zle -N peco-ghq-list
+bindkey '^]' peco-ghq-list
+
 ######################################
 # zman
 ######################################

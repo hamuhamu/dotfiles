@@ -23,3 +23,5 @@
     editor = vim -c \"set fenc=utf-8\"
 [color]
     ui = true
+[ghq]
+    root = ~/src
