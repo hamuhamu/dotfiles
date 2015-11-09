@@ -27,6 +27,12 @@ if [ -d $HOME/.phpenv/bin ]; then
     eval "$(phpenv init -)"
 fi
 
+# pyenv
+if [ -d $HOME/.pyenv/bin ]; then
+    export PATH="$HOME/.pyenv/bin:$PATH"
+    eval "$(pyenv init -)"
+fi
+
 # この設定いるのか？
 if [ -f ~/.zprofile.local ] ; then
     . ~/.zshrc.local
