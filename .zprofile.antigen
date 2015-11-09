@@ -4,6 +4,7 @@
 # antigen update
 # antigen selfupdate
 if [ ! -f $HOME/.zsh/antigen/antigen.zsh ]; then
+    # antigenがなければantigenをインストール
     mkdir -p $HOME/.zsh/antigen
     curl -L https://raw.githubusercontent.com/zsh-users/antigen/master/antigen.zsh > $HOME/.zsh/antigen/antigen.zsh
 fi
