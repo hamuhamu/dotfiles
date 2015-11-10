@@ -1,6 +1,6 @@
 #!/bin/bash
-CURRENT_BRANCH_NAME=`git rev-parse --abbrev-ref HEAD`
-NEW_BRANCH_NAME=$1
+readonly CURRENT_BRANCH_NAME=`git rev-parse --abbrev-ref HEAD`
+readonly NEW_BRANCH_NAME=$1
 
 # 引数が空であればUsageを表示
 if [ -z "$NEW_BRANCH_NAME" ]; then
