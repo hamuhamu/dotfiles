@@ -270,6 +270,10 @@ let g:vdebug_force_ascii = 1
     NeoBundle 'kana/vim-smartchr'
     " inoremap <expr> = smartchr#loop(' = ', ' == ', ' === ', '=')
 "}}}
+" {{{ fatih/vim-go
+" https://github.com/fatih/vim-go
+    NeoBundle 'fatih/vim-go'
+"}}}
 " {{{ vim-toggle
     " trueからfalseなど、対となるワードへトグルが出来る
     " normal  = > +
