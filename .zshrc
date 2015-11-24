@@ -130,6 +130,22 @@ stty -ixon -ixoff
 setopt print_eight_bit
 
 ######################################
+# fancy-ctrl-z
+# fgを<C-z>におきかえたもの
+######################################
+fancy-ctrl-z () {
+  if [[ $#BUFFER -eq 0 ]]; then
+    BUFFER="fg"
+    zle accept-line
+  else
+    zle push-input
+    zle clear-screen
+  fi
+}
+zle -N fancy-ctrl-z
+bindkey '^Z' fancy-ctrl-z
+
+######################################
 # peco
 ######################################
 # control + r
