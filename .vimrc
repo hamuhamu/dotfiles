@@ -28,8 +28,13 @@ endif
 set backspace=indent,eol,start
 " normarmode japanese off
 set imdisable
-let mapleader = ','
 
+
+" Leader {{{1
+" LeaderをSpaceに設定
+let mapleader = "\<Space>"
+nnoremap <Leader>w :w<CR>
+nnoremap <Leader>q :q<CR>
 
 " encoding {{{1
 "====================

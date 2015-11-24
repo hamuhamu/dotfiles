@@ -21,7 +21,7 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neomru.vim'
 
 nnoremap [unite] <Nop>
-nmap ,f [unite]
+nmap <Leader>f [unite]
 nnoremap <silent> [unite]bu :<C-u>Unite buffer<CR>
 nnoremap <silent> [unite]m :<C-u>Unite file_mru<CR>
 nnoremap <silent> [unite]r :<C-u>Unite register<CR>
@@ -46,7 +46,7 @@ NeoBundle 'Shougo/vimfiler.vim'
 let g:vimfiler_as_default_explorer = 1
 
 " 自動起動
-autocmd VimEnter * VimFiler -split -simple -winwidth=50 -no-quit
+" autocmd VimEnter * VimFiler -split -simple -winwidth=50 -no-quit
 
 "}}}
 " Alignta Config {{{
@@ -302,6 +302,8 @@ let g:vdebug_force_ascii = 1
     " S-Tab:ページダウン
     map  g/ <Plug>(easymotion-sn)
     omap g/ <Plug>(easymotion-tn)
+    map <Leader>j <Plug>(easymotion-j)
+    map <Leader>k <Plug>(easymotion-k)
     " map  n <Plug>(easymotion-next)
     " map  N <Plug>(easymotion-prev)
     " 大文字小文字無視
