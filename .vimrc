@@ -231,6 +231,12 @@ nnoremap <C-P> "0p
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
 
+" 貼り付けたテキストの末尾へ自動的に移動する
+vnoremap <silent> y y`]
+vnoremap <silent> p p`]
+nnoremap <silent> p p`]
+
+
 " カーソル位置の文字列をc*で、置換対象にする
 nnoremap <expr> c* ':%s ;\<' . expand('<cword>') . '\>;'
 vnoremap <expr> c* ':s ;\<' . expand('<cword>') . '\>;'
