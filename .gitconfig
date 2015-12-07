@@ -26,4 +26,4 @@
 [ghq]
     root = ~/src
 [include]
-    path = ~/.gitconfig.user
+    path = ~/.gitconfig.local
