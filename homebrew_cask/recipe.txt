@@ -15,7 +15,8 @@ brew cask install bettertouchtool
 brew cask install mou
 brew cask install shiftit
 brew cask install vagrant
- 
+brew cask install virtualbox
+
 brew install go
 brew tap peco/peco
 brew install peco
