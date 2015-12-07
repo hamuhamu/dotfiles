@@ -14,7 +14,8 @@ brew cask install rstudio
 brew cask install bettertouchtool
 brew cask install mou
 brew cask install shiftit
-
+brew cask install vagrant
+ 
 brew install go
 brew tap peco/peco
 brew install peco
