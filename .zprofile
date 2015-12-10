@@ -1,19 +1,19 @@
-if [ -f ~/.zshrc ] ; then
-    . ~/.zshrc
-fi
-
 source $HOME/dotfiles/.zprofile.antigen
 
 export SVN_EDITOR=vim
 
 # /usr/localを最優先で読み込み
 export PATH=/usr/local:$PATH
-export GOPATH=~/go
+export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$HOME/bin
 export PATH=$PATH:$HOME/.composer/vendor/bin
 
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+# rbenv
+if [ -d $HOME/.rbenv/bin ]; then
+    export PATH="$HOME/.rbenv/bin:$PATH"
+    eval "$(rbenv init -)"
+fi
 
 # plenv
 if [ -d $HOME/.plenv/bin ]; then
@@ -33,6 +33,12 @@ if [ -d $HOME/.pyenv/bin ]; then
     eval "$(pyenv init -)"
 fi
 
-if [ -f ~/.zprofile.local ] ; then
-    . ~/.zshrc.local
+# .zshrc
+if [ -f $HOME/.zshrc ] ; then
+    source $HOME/.zshrc
+fi
+
+# .zprofile.local
+if [ -f $HOME/.zshrc.local ] ; then
+    source $HOME/.zshrc.local
 fi
