@@ -31,6 +31,3 @@ brew tap homebrew/versions
 # http://qiita.com/strsk/items/9151cef7e68f0746820d
 brew tap motemen/ghq
 brew install ghq
-
-# hubコマンド
-brew install hub
