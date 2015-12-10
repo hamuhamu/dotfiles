@@ -151,7 +151,7 @@ zle -N fancy-ctrl-z
 bindkey '^Z' fancy-ctrl-z
 
 ######################################
-# peco
+# peco history参照
 ######################################
 # control + r
 # .zsh_historyからコマンド履歴をインタラクティブに検索する
@@ -170,7 +170,6 @@ function peco-select-history() {
     CURSOR=$#BUFFER
     zle clear-screen
 }
-
 
 ######################################
 # cdr 移動したディレクトリの履歴
