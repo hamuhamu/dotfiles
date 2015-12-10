@@ -33,7 +33,6 @@ if [ -d $HOME/.pyenv/bin ]; then
     eval "$(pyenv init -)"
 fi
 
-# この設定いるのか？
 if [ -f ~/.zprofile.local ] ; then
     . ~/.zshrc.local
 fi

@@ -199,6 +199,9 @@ if [[ -f $HOME/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-m4i-SLA
     add-zsh-hook chpwd _cdd_chpwd
 fi
 
+chpwd() {
+    ls
+}
 
 ######################################
 # hash
