@@ -50,10 +50,11 @@ RPROMPT='${vcs_info_msg_0_}'
 # %n => usernaem %m => hostname %# => usertype(#=root, %=normal)
 SUCCESS='^_^'
 FAIL='ToT'
+ABS_PATH='%/'
 
 PROMPT=""
 PROMPT+="%(?.${fg[cyan]}$SUCCESS.${fg[red]}$FAIL) "
-PROMPT+="%{${fg[green]}%}%~%{${reset_color}%}
+PROMPT+="%{${fg[green]}%}$ABS_PATH%{${reset_color}%}
 [%n@%m] %# "
 
 PROMPT2="[%n]> "
@@ -199,6 +200,15 @@ if [[ -f $HOME/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-m4i-SLA
     add-zsh-hook chpwd _cdd_chpwd
 fi
 
+
+######################################
+# hash
+######################################
+# CDABLE_VARSを指定することで、~を省略できる
+# cd ~log => cd log
+setopt CDABLE_VARS
+hash -d log=/var/log
+hash -d dot=$HOME/dotfiles
 
 ######################################
 # ghq
