@@ -202,6 +202,7 @@ fi
 
 ######################################
 # hash
+# ディレクトリのエイリアスを登録できる
 ######################################
 # CDABLE_VARSを指定することで、~を省略できる
 # cd ~log => cd log
@@ -224,6 +225,36 @@ function peco-ghq-list () {
 
 zle -N peco-ghq-list
 bindkey '^]' peco-ghq-list
+
+######################################
+# web_search
+######################################
+# url: $1, delimiter: $2, prefix: $3, words: $4..
+function web_search {
+  local url=$1       && shift
+  local delimiter=$1 && shift
+  local prefix=$1    && shift
+  local query
+
+  while [ -n "$1" ]; do
+    if [ -n "$query" ]; then
+      query="${query}${delimiter}${prefix}$1"
+    else
+      query="${prefix}$1"
+    fi
+    shift
+  done
+
+  open "${url}${query}"
+}
+
+function web() {
+  web_search "https://www.google.co.jp/search?&q=" "+" "" "$@"
+}
+
+function phpdoc() {
+  web_search "https://php.net/" "+" "" "$@"
+}
 
 ######################################
 # zman
