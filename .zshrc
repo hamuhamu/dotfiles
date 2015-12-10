@@ -39,10 +39,15 @@ zstyle ':vcs_info:git:*' stagedstr "%F{yellow}!"
 zstyle ':vcs_info:git:*' unstagedstr "%F{red}+"
 # rebase 途中だったり merge でコンフリクトが発生したり、何か特別な状況
 zstyle ':vcs_info:*' actionformats '[%b|%a]'
-# 右端のプロンプト
-RPROMPT='${vcs_info_msg_0_}'
+# git stash count
+function git_stash_count {
+  local stashCount=$(git stash list 2>/dev/null | wc -l | tr -d ' ')
+    echo "$stashCount"
+}
 
-#
+# 右端のプロンプト
+RPROMPT='${vcs_info_msg_0_}%{${fg[magenta]}%}stash(`git_stash_count`)%{${reset_color}%}'
+
 # colorの設定後にpromptの設定をすること！
 # screen時にうまく引き継げない
 #

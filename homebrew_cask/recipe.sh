@@ -16,6 +16,7 @@ brew cask install mou
 brew cask install shiftit
 brew cask install vagrant
 brew cask install virtualbox
+brew install tig
 
 brew install go
 brew tap peco/peco
