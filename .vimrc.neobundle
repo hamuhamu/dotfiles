@@ -263,6 +263,11 @@ let g:vdebug_force_ascii = 1
 
 " {{{ vimからgitを操作できる tpope/vim-fugitive
     NeoBundle 'tpope/vim-fugitive'
+    nnoremap <silent> <Space>gb :Gblame<CR> " git blame
+    nnoremap <silent> <Space>gd :Gdiff<CR>  " git diff
+    nnoremap <silent> <Space>ga :Gwrite<CR> " git add
+    nnoremap <silent> <Space>gs :Gstatus<CR>" git status
+    nnoremap <silent> <Space>gc :Gcommit<CR>" git commit
 " }}}
 " {{{ editorconfig
     NeoBundle 'editorconfig/editorconfig-vim'
