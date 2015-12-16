@@ -4,9 +4,6 @@
     ad = add
     ad-all = add -A
     st = status
-    # ********************
-    # branch
-    # ********************
     df = diff
     df2 = diff HEAD~
     df3 = diff HEAD~~
