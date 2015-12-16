@@ -261,6 +261,9 @@ NeoBundle 'haya14busa/vim-migemo'
 NeoBundle 'joonty/vdebug'
 let g:vdebug_force_ascii = 1
 
+" {{{ vimからgitを操作できる tpope/vim-fugitive
+    NeoBundle 'tpope/vim-fugitive'
+" }}}
 " {{{ editorconfig
     NeoBundle 'editorconfig/editorconfig-vim'
 "}}}
