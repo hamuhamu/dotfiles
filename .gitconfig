@@ -2,6 +2,7 @@
     default = matching
 [alias]
     ad = add
+    ad-all = add -A
     st = status
     # ********************
     # branch
