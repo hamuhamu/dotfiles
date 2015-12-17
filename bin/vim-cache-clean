@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# vimのキャッシュをクリアにするコマンド
+rm -f $HOME/.vim/view/*
