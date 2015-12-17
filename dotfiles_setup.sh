@@ -28,9 +28,7 @@ mkdir -p ${HOME}/.vim/
 mkdir -p ${HOME}/.vim/bundle
 
 # NeoBundleのインストール
-if [ ! -d ${HOME}/.vim/bundle/neobundle.vim ]; then
-    git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
-fi
+[[ -e ${HOME}/.vim/bundle/neobundle.vim ]] || git clone https://github.com/Shougo/neobundle.vim $HOME/.vim/bundle/neobundle.vim
 
 ln -sfn ${HOME}/dotfiles/.vim/template ${HOME}/.vim/template
 ln -sfn ${HOME}/dotfiles/.vim/snippets ${HOME}/.vim/snippets
