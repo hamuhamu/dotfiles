@@ -154,6 +154,7 @@ let g:quickrun_config = {}
 let g:quickrun_config['_'] = {}
 let g:quickrun_config['_']['runner'] = 'vimproc'
 let g:quickrun_config['_']['runner/vimproc/updatetime'] = 100
+nnoremap <silent> <Space>Q :QuickRun<CR>
 
 "}}}
 
