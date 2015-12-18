@@ -1,19 +1,11 @@
 # ドットファイルをホームディレクトリにシムリンクを貼る
-ln -sf ${HOME}/dotfiles/.vimrc ${HOME}
-ln -sf ${HOME}/dotfiles/.gvimrc ${HOME}
+for i in `ls -a`
+do
+    [[ -f ${HOME}/dotfiles/$i ]] || continue # ファイル以外ならcontinue
+    [[ $i =~ ^\..*$ ]] || continue           # .から始まるファイルでなければcontinue
 
-ln -sf ${HOME}/dotfiles/.bash_profile ${HOME}
-ln -sf ${HOME}/dotfiles/.bashrc ${HOME}
-
-ln -sf ${HOME}/dotfiles/.zprofile ${HOME}
-ln -sf ${HOME}/dotfiles/.zshrc ${HOME}
-
-ln -sf ${HOME}/dotfiles/.gitconfig ${HOME}
-
-ln -sf ${HOME}/dotfiles/.editorconfig ${HOME}
-
-ln -sf ${HOME}/dotfiles/.screenrc ${HOME}
-ln -sf ${HOME}/dotfiles/.tmux.conf ${HOME}
+    ln -sf ${HOME}/dotfiles/$i ${HOME}
+done
 
 #######################################################################
 # binの設定
@@ -28,7 +20,7 @@ mkdir -p ${HOME}/.vim/
 mkdir -p ${HOME}/.vim/bundle
 
 # NeoBundleのインストール
-[[ -e ${HOME}/.vim/bundle/neobundle.vim ]] || git clone https://github.com/Shougo/neobundle.vim $HOME/.vim/bundle/neobundle.vim
+[[ -e ${HOME}/.vim/bundle/neobundle.vim ]] || git clone https://github.com/Shougo/neobundle.vim ${HOME}/.vim/bundle/neobundle.vim
 
 ln -sfn ${HOME}/dotfiles/.vim/template ${HOME}/.vim/template
 ln -sfn ${HOME}/dotfiles/.vim/snippets ${HOME}/.vim/snippets
