@@ -1,2 +1,2 @@
-dotfile_setup:
-	./dotfiles_setup.sh
+setup:
+	./setup.sh
