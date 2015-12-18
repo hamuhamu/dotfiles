@@ -30,3 +30,7 @@ ln -sfn ${HOME}/dotfiles/.vim/snippets ${HOME}/.vim/snippets
 
 mkdir -p ${HOME}/.vim/after/
 ln -sfn ${HOME}/dotfiles/.vim/after/ftplugin ${HOME}/.vim/after/ftplugin
+
+if [ `uname` = "Darwin" ]; then
+    # Mac OS X用の設定
+fi
