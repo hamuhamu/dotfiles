@@ -1,3 +1,7 @@
+# dotfilesディレクトリがなければ作成
+[[ -d ${HOME}/dotfiles ]] || git clone git@github.com:hamuhamu/dotfiles.git ${HOME}/dotfiles
+
+
 # ドットファイルをホームディレクトリにシムリンクを貼る
 for i in `ls -a`
 do
@@ -32,5 +36,6 @@ mkdir -p ${HOME}/.vim/after/
 ln -sfn ${HOME}/dotfiles/.vim/after/ftplugin ${HOME}/.vim/after/ftplugin
 
 if [ `uname` = "Darwin" ]; then
+    uname
     # Mac OS X用の設定
 fi
