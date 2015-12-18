@@ -267,7 +267,7 @@ let g:vdebug_force_ascii = 1
     nnoremap <silent> <Space>gd :Gdiff<CR>  " git diff
     nnoremap <silent> <Space>ga :Gwrite<CR> " git add
     nnoremap <silent> <Space>gs :Gstatus<CR>" git status
-    nnoremap <silent> <Space>gc :Gcommit<CR>" git commit
+    nnoremap <silent> <Space>gi :Gcommit<CR>" git commit gcだとcutがご作動してしまいがちなので、giとする
 " }}}
 " {{{ editorconfig
     NeoBundle 'editorconfig/editorconfig-vim'
