@@ -282,6 +282,11 @@ let g:vdebug_force_ascii = 1
 " {{{ Goに関するvimの設定 fatih/vim-go
 " https://github.com/fatih/vim-go
     NeoBundle 'fatih/vim-go'
+    let g:go_highlight_functions = 1
+    let g:go_highlight_methods = 1
+    let g:go_highlight_structs = 1
+    let g:go_highlight_operators = 1
+    let g:go_highlight_build_constraints = 1
 "}}}
 " {{{ vim-toggle
     " trueからfalseなど、対となるワードへトグルが出来る
