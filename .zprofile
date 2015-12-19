@@ -33,12 +33,11 @@ if [ -d $HOME/.pyenv/bin ]; then
     eval "$(pyenv init -)"
 fi
 
-# .zshrc
-if [ -f $HOME/.zshrc ] ; then
-    source $HOME/.zshrc
-fi
-
 # .zprofile.local
-if [ -f $HOME/.zshrc.local ] ; then
-    source $HOME/.zshrc.local
+[[ -f $HOME/.zshrc.local ]] && source $HOME/.zshrc.local
+
+# .zshenvに以下の設定を記述しておくとプロファイリングしてくれる
+# zmodload zsh/zprof && zprof
+if (which zprof > /dev/null) ;then
+      zprof | less
 fi
