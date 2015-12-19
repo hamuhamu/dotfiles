@@ -279,7 +279,7 @@ let g:vdebug_force_ascii = 1
     NeoBundle 'kana/vim-smartchr'
     " inoremap <expr> = smartchr#loop(' = ', ' == ', ' === ', '=')
 "}}}
-" {{{ fatih/vim-go
+" {{{ Goに関するvimの設定 fatih/vim-go
 " https://github.com/fatih/vim-go
     NeoBundle 'fatih/vim-go'
 "}}}
