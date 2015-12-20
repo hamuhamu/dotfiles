@@ -224,18 +224,17 @@ nnoremap <silent> ciy ciw<C-r>0<ESC>:let@/=@1<CR>:noh<CR>
 nnoremap <silent> cy   ce<C-r>0<ESC>:let@/=@1<CR>:noh<CR>
 vnoremap <silent> cy   c<C-r>0<ESC>:let@/=@1<CR>:noh<CR>
 
-" 無名レジスタではなく直前にヤンクしたヤンクレジスタからペースト
-nnoremap <C-P> "0p
-
 " command history + filtering
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
 
 " 貼り付けたテキストの末尾へ自動的に移動する
 vnoremap <silent> y y`]
-vnoremap <silent> p p`]
 nnoremap <silent> p p`]
-
+vnoremap <silent> p p`]
+" "0pで無名レジスタではなく直前にヤンクしたヤンクレジスタからペースト
+nnoremap <silent> P "0p`]
+vnoremap <silent> P "0p`]
 
 " カーソル位置の文字列をc*で、置換対象にする
 nnoremap <expr> c* ':%s ;\<' . expand('<cword>') . '\>;'
