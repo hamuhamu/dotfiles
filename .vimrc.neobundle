@@ -228,7 +228,10 @@ NeoBundle 'kien/ctrlp.vim'
 let g:ctrlp_max_height = &lines
 
 " {{{Open Browser
-    NeoBundle 'tyru/open-browser'
+    NeoBundle 'tyru/open-browser.vim'
+" }}}
+" {{{ GitHub Browser
+    NeoBundle 'tyru/open-browser-github.vim'
 " }}}
 " {{{ PreVim    MarkDown Preview
     NeoBundle 'kannokanno/previm'
