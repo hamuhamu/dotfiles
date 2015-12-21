@@ -227,10 +227,12 @@ NeoBundle 'kien/ctrlp.vim'
 " Match files Full Screen
 let g:ctrlp_max_height = &lines
 
-" Open Browser
-NeoBundle 'git@github.com:tyru/open-browser.vim.git'
-" PreVim    MarkDown Preview
-NeoBundle 'kannokanno/previm'
+" {{{Open Browser
+    NeoBundle 'tyru/open-browser'
+" }}}
+" {{{ PreVim    MarkDown Preview
+    NeoBundle 'kannokanno/previm'
+    " }}}
 " MarkDown filetype
 augroup PrevimSettings
     autocmd!
