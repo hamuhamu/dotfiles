@@ -134,15 +134,6 @@ let g:neosnippet#snippets_directory='~/.vim/snippets'
 
 "}}}
 
-
-NeoBundle 'Shougo/echodoc', '', 'default'
-" insert mode to load
-call neobundle#config('echodoc', {
-\ 'lazy' : 1,
-\ 'autoload' : {
-\ 'insert' : 1,
-\ }})
-
 " visual mode
 " :B Exコマンド(sortなど)
 NeoBundle 'taku-o/vim-vis'
