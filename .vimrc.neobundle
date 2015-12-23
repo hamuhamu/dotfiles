@@ -17,27 +17,29 @@ endif
 
 " 日本語help
 NeoBundle 'vim-jp/vimdoc-ja'
-NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neomru.vim'
 
-nnoremap [unite] <Nop>
-nmap <Leader>f [unite]
-nnoremap <silent> [unite]bu :<C-u>Unite buffer<CR>
-nnoremap <silent> [unite]m :<C-u>Unite file_mru<CR>
-nnoremap <silent> [unite]r :<C-u>Unite register<CR>
-nnoremap <silent> [unite]d :<C-u>UniteWithBufferDir file<CR>
-nnoremap <silent> [unite]ba :<C-u>UniteBookmarkAdd<CR>
-nnoremap <silent> [unite]bo :<C-u>Unite bookmark<CR>
 
-nnoremap <silent> <buffer> <expr> <C-o> unite#do_action('open')
-inoremap <silent> <buffer> <expr> <C-o> unite#do_action('open')
-" 横分割
-au FileType unite nnoremap <silent> <buffer> <expr> <C-s> unite#do_action('split')
-au FileType unite inoremap <silent> <buffer> <expr> <C-s> unite#do_action('split')
-" 縦分割
-au FileType unite nnoremap <silent> <buffer> <expr> <C-v> unite#do_action('vsplit')
-au FileType unite inoremap <silent> <buffer> <expr> <C-v> unite#do_action('vsplit')
+" {{{ unite.vim
+    NeoBundle 'Shougo/unite.vim'
+    nnoremap [unite] <Nop>
+    nmap <Leader>f [unite]
+    nnoremap <silent> [unite]bu :<C-u>Unite buffer<CR>
+    nnoremap <silent> [unite]m :<C-u>Unite file_mru<CR>
+    nnoremap <silent> [unite]r :<C-u>Unite register<CR>
+    nnoremap <silent> [unite]d :<C-u>UniteWithBufferDir file<CR>
+    nnoremap <silent> [unite]ba :<C-u>UniteBookmarkAdd<CR>
+    nnoremap <silent> [unite]bo :<C-u>Unite bookmark<CR>
 
+    nnoremap <silent> <buffer> <expr> <C-o> unite#do_action('open')
+    inoremap <silent> <buffer> <expr> <C-o> unite#do_action('open')
+    " 横分割
+    au FileType unite nnoremap <silent> <buffer> <expr> <C-s> unite#do_action('split')
+    au FileType unite inoremap <silent> <buffer> <expr> <C-s> unite#do_action('split')
+    " 縦分割
+    au FileType unite nnoremap <silent> <buffer> <expr> <C-v> unite#do_action('vsplit')
+    au FileType unite inoremap <silent> <buffer> <expr> <C-v> unite#do_action('vsplit')
+" }}}
 " Config VimFiler {{{
 
 NeoBundle 'Shougo/vimfiler.vim'
