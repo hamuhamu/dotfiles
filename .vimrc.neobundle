@@ -266,7 +266,7 @@ let g:vdebug_force_ascii = 1
     " よく使うファイルをブックマースする
     let g:startify_bookmarks = [
       \ $HOME . '/.vimrc',
-      \ $HOME . '/memo/todo.md',
+      \ $HOME . '/Dropbox/memo/todo.md',
       \ ]
 " }}}
 " {{{ vimからgitを操作できる tpope/vim-fugitive
