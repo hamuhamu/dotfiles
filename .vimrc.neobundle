@@ -266,6 +266,7 @@ let g:vdebug_force_ascii = 1
     " よく使うファイルをブックマースする
     let g:startify_bookmarks = [
       \ $HOME . '/.vimrc',
+      \ $HOME . '/.vimrc.neobundle',
       \ $HOME . '/Dropbox/memo/todo.md',
       \ ]
 " }}}
