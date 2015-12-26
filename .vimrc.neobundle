@@ -287,7 +287,7 @@ let g:vdebug_force_ascii = 1
     NeoBundle 'kana/vim-smartchr'
     " inoremap <expr> = smartchr#loop(' = ', ' == ', ' === ', '=')
 "}}}
-" {{{ Goに関するvimの設定 fatih/vim-go
+" {{{ golangに関するvimの設定 fatih/vim-go
 " https://github.com/fatih/vim-go
     NeoBundle 'fatih/vim-go'
     let g:go_highlight_functions = 1
@@ -296,6 +296,8 @@ let g:vdebug_force_ascii = 1
     let g:go_highlight_operators = 1
     let g:go_highlight_build_constraints = 1
     let g:go_fmt_command = 'goimports'
+    " 入力補完
+    exe "set rtp+=".globpath($GOPATH, "src/github.com/nsf/gocode/vim")
 "}}}
 " {{{ vim-toggle
     " trueからfalseなど、対となるワードへトグルが出来る
