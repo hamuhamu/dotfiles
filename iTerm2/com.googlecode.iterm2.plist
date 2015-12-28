@@ -546,13 +546,15 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame Preferences</key>
-	<string>278 232 924 485 0 0 1440 877 </string>
+	<string>80 264 924 485 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 25 1010 852 0 0 1440 877 </string>
+	<string>222 101 970 776 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>183 28 1010 845 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>162 28 1010 845 0 0 1440 877 </string>
+	<key>NeverWarnAboutShortLivedSessions_50931F5E-7873-4CBF-8AB6-3337EC3038BF</key>
+	<true/>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -771,7 +773,7 @@
 			<key>Cursor Type</key>
 			<integer>2</integer>
 			<key>Custom Command</key>
-			<string>No</string>
+			<string>Yes</string>
 			<key>Custom Directory</key>
 			<string>No</string>
 			<key>Default Bookmark</key>
@@ -802,7 +804,7 @@
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
-			<string></string>
+			<string>source $HOME/.zprofile</string>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -2011,7 +2013,7 @@
 	<key>NoSyncTimeOfLastPromo</key>
 	<real>463485358.66859198</real>
 	<key>NoSyncTimeOfLastPromoDownload</key>
-	<real>472139443.25166899</real>
+	<real>472974342.98132402</real>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
 	<key>OpenArrangementAtStartup</key>
@@ -2076,7 +2078,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2015-12-18T08:00:49Z</date>
+	<date>2015-12-26T15:53:03Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>
