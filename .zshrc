@@ -39,7 +39,7 @@ zstyle ':vcs_info:git:*' stagedstr "%F{yellow}!"
 zstyle ':vcs_info:git:*' unstagedstr "%F{red}+"
 # rebase 途中だったり merge でコンフリクトが発生したり、何か特別な状況
 zstyle ':vcs_info:*' actionformats '[%b|%a]'
-# git stash count
+# git stash
 function git_stash {
     local stashCount=$(git stash list 2>/dev/null | wc -l | tr -d ' ')
     [[ $git_stash_count -eq 0 ]] && return
