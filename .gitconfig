@@ -26,3 +26,5 @@
     root = ~/src
 [include]
     path = ~/.gitconfig.local
+[commit]
+    template = ~/.gitcommit.template
