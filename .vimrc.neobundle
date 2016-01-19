@@ -259,8 +259,6 @@ NeoBundle 'haya14busa/vim-migemo'
 NeoBundle 'joonty/vdebug'
 let g:vdebug_force_ascii = 1
 
-
-
 " {{{ vimの起動画面でショートカットを起動できる terryma/vim-multiple-cursors
     NeoBundle 'mhinz/vim-startify'
     " よく使うファイルをブックマースする
