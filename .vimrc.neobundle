@@ -256,6 +256,25 @@ set t_Co=256
 
 NeoBundle 'haya14busa/vim-migemo'
 
+" {{{ simeji/winresizer windowのリサイズを簡単にする
+    NeoBundle 'simeji/winresizer'
+    " リサイズモードへ遷移する開始キー
+    let g:winresizer_start_key = '<C-e>'
+    " 左 (h)
+    let g:winresizer_keycode_left = 104
+    " 右 (l)
+    let g:winresizer_keycode_right = 108
+    " 下 (j)
+    let g:winresizer_keycode_down = 106
+    " 上 (k)
+    let g:winresizer_keycode_up = 107
+    " リサイズ確定 (Enter)
+    let g:winresizer_keycode_finish = 13
+    " リサイズキャンセル (q)
+    let g:winresizer_keycode_cancel = 113
+
+
+" }}}
 NeoBundle 'joonty/vdebug'
 let g:vdebug_force_ascii = 1
 
