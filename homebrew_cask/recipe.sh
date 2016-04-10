@@ -12,7 +12,6 @@ brew cask install karabiner
 brew cask install hyperswitch
 brew cask install rstudio
 brew cask install bettertouchtool
-brew cask install mou
 brew cask install shiftit
 brew cask install vagrant
 brew cask install virtualbox
