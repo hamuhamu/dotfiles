@@ -26,6 +26,8 @@ brew install libjpeg
 brew install re2c
 brew install libpng
 
+brew install wget
+
 brew tap homebrew/versions
 
 # http://qiita.com/strsk/items/9151cef7e68f0746820d
