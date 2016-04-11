@@ -16,6 +16,7 @@ brew cask install shiftit
 brew cask install vagrant
 brew cask install virtualbox
 brew cask install lastpass
+brew cask install google-japanese-ime
 brew install tig
 
 brew install go
