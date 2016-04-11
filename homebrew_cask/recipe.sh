@@ -15,6 +15,7 @@ brew cask install bettertouchtool
 brew cask install shiftit
 brew cask install vagrant
 brew cask install virtualbox
+brew cask install lastpass
 brew install tig
 
 brew install go
