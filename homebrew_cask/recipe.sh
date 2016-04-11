@@ -29,6 +29,7 @@ brew install re2c
 brew install libpng
 
 brew install wget
+brew install tmux
 
 brew tap homebrew/versions
 
