@@ -30,6 +30,7 @@ brew install libpng
 
 brew install wget
 brew install tmux
+brew install ag
 
 brew tap homebrew/versions
 
