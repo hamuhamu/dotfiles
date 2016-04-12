@@ -42,3 +42,6 @@ brew install ghq
 
 # iTermテンプレート
 ghq get https://github.com/altercation/solarized.git
+
+# .DS_Storeを作らない
+defaults write com.apple.desktopservices DSDontWriteNetworkStores true
