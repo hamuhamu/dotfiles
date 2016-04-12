@@ -31,6 +31,8 @@ brew install libpng
 brew install wget
 brew install tmux
 brew install ag
+# tmuxとMacクリップボードを同期できる
+brew install reattach-to-user-namespace
 
 brew tap homebrew/versions
 
