@@ -295,15 +295,10 @@ alias -g W='| wc'
 
 alias gmake='make -f ~/gmake/Makefile'
 
-# alias d='docker'
-# alias dr='docker run --rm -it'
-# alias de='docker exec -it'
-# alias drm='docker ps -qa | xargs docker rm'
-# alias drmi='d images -q --filter "dangling=true" | xargs docker rmi'
-# alias drmif='d images -q --filter "dangling=true" | xargs docker rmi -f'
-# alias dm='docker-machine'
-# alias dme='eval $(docker-machine env default)'
-# alias dc='docker-compose'
+alias d='docker'
+alias dm='docker-machine'
+alias de='docker exec -it'
+alias drm='docker ps -qa | xargs docker rm'
 
 PERL_MB_OPT="--install_base \"/Users/y-ohhashi/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/Users/y-ohhashi/perl5"; export PERL_MM_OPT;
