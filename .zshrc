@@ -293,8 +293,7 @@ alias -g H='| head'
 alias -g T='| tail'
 alias -g W='| wc'
 
-alias gmake='make -f ~/gmake/Makefile'
-
+# Docker
 alias d='docker'
 alias dm='docker-machine'
 alias de='docker exec -it'
