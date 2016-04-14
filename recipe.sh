@@ -28,6 +28,8 @@ brew install libjpeg
 brew install re2c
 brew install libpng
 
+brew install tree
+brew install vim
 brew install wget
 brew install tmux
 brew install ag
