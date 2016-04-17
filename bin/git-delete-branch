@@ -1,0 +1,5 @@
+#!/bin/bash
+readonly DELETE_BRANCH_NAME=$1
+
+git branch -d $DELETE_BRANCH_NAME
+exit 0
