@@ -1,14 +1,6 @@
 #!/bin/bash
 # カレントディレクトリ以下のファイルを対象に、引数 targetをreplacedに置換する
 
-echo 'Are you sure? Argument [target replaced]. [y/n]'
-read ANSWER
-
-# y以外ならreturn
-if [ $ANSWER != 'y' ]; then
-    exit 0
-fi
-
 # 引数が足らなければ、エラーを返す
 if [ $# -ne 2 ]; then
     echo 'Argument is need [target replaced].'
