@@ -255,7 +255,9 @@ set background=dark
 set t_Co=256
 
 NeoBundle 'haya14busa/vim-migemo'
-
+" {{{ HEADからの差分を+-で表現してくれる
+NeoBundle 'airblade/vim-gitgutter'
+" }}}
 NeoBundle 'joonty/vdebug'
 let g:vdebug_force_ascii = 1
 
