@@ -2,9 +2,10 @@
     default = matching
 [alias]
     ad = add
-    ad-all = add -A
+    adA = add -A
     st = status
     df = diff
+    df1 = diff HEAD
     df2 = diff HEAD~
     df3 = diff HEAD~~
     # 単語単位のdiff
