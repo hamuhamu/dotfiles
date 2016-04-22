@@ -33,6 +33,7 @@ brew install vim
 brew install wget
 brew install tmux
 brew install ag
+brew install gibo
 # tmuxとMacクリップボードを同期できる
 brew install reattach-to-user-namespace
 
