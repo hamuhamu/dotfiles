@@ -295,6 +295,7 @@ alias -g W='| wc'
 
 # Docker
 alias d='docker'
+alias dls='docker images' # docker ls的な意味
 alias dm='docker-machine'
 alias de='docker exec -it'
 alias drm='docker ps -qa | xargs docker rm'
