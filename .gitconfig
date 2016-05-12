@@ -19,6 +19,7 @@
     df-word = diff --word-diff
     browse = !hub browse
     recommit = commit --amend
+    one-previous-commit-hard-reset = reset --hard HEAD^
 [core]
     excludesfile = ~/.gitignore
     editor = vim -c \"set fenc=utf-8\"
