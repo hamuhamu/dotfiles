@@ -23,6 +23,8 @@ brew install go
 brew tap peco/peco
 brew install peco
 
+brew install hub
+
 # phpの>=5.69をインストールする際に使う
 brew install libjpeg
 brew install re2c
