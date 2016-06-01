@@ -24,6 +24,7 @@ brew tap peco/peco
 brew install peco
 
 brew install hub
+brew install gibo
 
 # phpの>=5.69をインストールする際に使う
 brew install libjpeg
