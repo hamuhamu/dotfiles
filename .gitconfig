@@ -17,6 +17,12 @@
     make-gitignore = !sh -c 'gibo ${0} > .gitignore'
     br = branch
     delete-branch = !sh -c 'git branch -D ${0}'
+    # で引数が指定されていなければブランチ名をリネームしない
+    rename-branch = !sh -c '   \
+        test "${0}" != "sh" && \
+        CURRENT_BRANCH_NAME=`git rev-parse --abbrev-ref HEAD` && \
+        NEW_BRANCH_NAME=${0} && \
+        git branch -m $CURRENT_BRANCH_NAME $NEW_BRANCH_NAME'
     graph = log --graph --date=short --decorate=short --pretty=format:'%Cgreen%h %Creset%cd %Cblue%cn %Cred%d %Creset%s'
     df-word = diff --word-diff
     browse = !hub browse
