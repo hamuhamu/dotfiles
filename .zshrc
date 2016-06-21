@@ -283,6 +283,7 @@ alias cl='clear'
 alias sc='screen'
 alias tm='tmux'
 alias reload="source $HOME/.zprofile"
+alias ps-kill='ps -9'
 
 alias -g A='| ag'
 alias -g G='| grep'
