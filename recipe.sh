@@ -17,6 +17,8 @@ brew cask install vagrant
 brew cask install virtualbox
 brew cask install lastpass
 brew cask install google-japanese-ime
+brew cask install phpstorm
+
 brew install tig
 
 brew install go
@@ -55,3 +57,7 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores true
 # composerをインストール
 curl -sS https://getcomposer.org/installer | php -- --install-dir=./bin
 mv ./bin/{composer.phar,composer}
+
+# phpunitインストール
+curl -sSL https://phar.phpunit.de/phpunit.phar > ~/bin/phpunit
+chmod 775 ~/bin/phpunit
