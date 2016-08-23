@@ -15,6 +15,7 @@ brew cask install bettertouchtool
 brew cask install shiftit
 brew cask install vagrant
 brew cask install virtualbox
+brew cask install virtualbox-extension-pack
 brew cask install lastpass
 brew cask install google-japanese-ime
 brew cask install phpstorm
