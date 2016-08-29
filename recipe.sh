@@ -21,6 +21,8 @@ brew cask install google-japanese-ime
 brew cask install phpstorm
 
 brew install tig
+# ゴミ箱に削除
+brew install trash
 
 brew install go
 brew tap peco/peco
