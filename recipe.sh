@@ -39,6 +39,7 @@ brew install libpng
 brew install tree
 brew install vim
 brew install wget
+brew install htop
 brew install tmux
 brew install ag
 brew install gibo
