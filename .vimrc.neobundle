@@ -162,7 +162,7 @@ NeoBundle 'thinca/vim-ref'
 " brew install w3m
 " tar xzvf php_manual_ja.tar.gz
 " mv ~/php-chunked-xhtml ~/.vim/
- let g:ref_phpmanual_path = $HOME . '/.vim/phpmanual/'
+let g:ref_phpmanual_path = $HOME . '/.vim/phpmanual/'
 
 let g:ref_source_webdict_use_cache = 1
 let g:ref_source_webdict_sites = {
@@ -176,17 +176,6 @@ function! g:ref_source_webdict_sites.alc.filter(output)
 endfunction
 
 :cnoremap aa Ref webdict alc<Space>
-
-" syntax check
-" :w after syntax check
-" :SyntasticInfo perl checker check
-NeoBundle 'scrooloose/syntastic.git'
-" let g:syntastic_debug = 1
-let g:syntastic_enable_signs = 1
-let g:syntastic_auto_loc_list = 2
-" perl syntax check enable
-let g:syntastic_enable_perl_checker = 1
-let g:syntastic_perl_checkers = ['perl', 'podchecker']
 
 " 括弧や引用符の編集ができる
 " visual mode S"   選択範囲"で囲む

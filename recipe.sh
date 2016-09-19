@@ -15,12 +15,15 @@ brew cask install bettertouchtool
 brew cask install shiftit
 brew cask install vagrant
 brew cask install virtualbox
+brew cask install virtualbox-extension-pack
 brew cask install lastpass
 brew cask install google-japanese-ime
 brew cask install phpstorm
 
 brew install tig
 brew install ansible
+# ゴミ箱に削除
+brew install trash
 brew install go
 brew tap peco/peco
 brew install peco
@@ -36,6 +39,7 @@ brew install libpng
 brew install tree
 brew install vim
 brew install wget
+brew install htop
 brew install tmux
 brew install ag
 brew install gibo
