@@ -20,7 +20,7 @@ brew cask install google-japanese-ime
 brew cask install phpstorm
 
 brew install tig
-
+brew install ansible
 brew install go
 brew tap peco/peco
 brew install peco
