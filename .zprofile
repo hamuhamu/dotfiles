@@ -8,29 +8,13 @@ export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$HOME/bin
 export PATH=$PATH:$HOME/.composer/vendor/bin
+# https://github.com/riywo/anyenv
+export PATH=$HOME/.anyenv/bin:$PATH
 
-# rbenv
-if [ -d $HOME/.rbenv/bin ]; then
-    export PATH="$HOME/.rbenv/bin:$PATH"
-    eval "$(rbenv init -)"
-fi
-
-# plenv
-if [ -d $HOME/.plenv/bin ]; then
-    export PATH="$HOME/.plenv/bin:$PATH"
-    eval "$(plenv init -)"
-fi
-
-# phpenv
-if [ -d $HOME/.phpenv/bin ]; then
-    export PATH="$HOME/.phpenv/bin:$PATH"
-    eval "$(phpenv init -)"
-fi
-
-# pyenv
-if [ -d $HOME/.pyenv/bin ]; then
-    export PATH="$HOME/.pyenv/bin:$PATH"
-    eval "$(pyenv init -)"
+# anyenv
+if [ -d $HOME/.anyenv ] ; then
+    export PATH=$HOME/.anyenv/bin:$PATH
+    eval "$(anyenv init -)"
 fi
 
 # .zprofile.local
