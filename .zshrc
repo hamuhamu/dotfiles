@@ -277,7 +277,7 @@ function zman() {
 # ailias
 ######################################
 alias g='git'
-alias ll='ls -la'
+alias ll='ls -lah'
 alias vi='vim'
 alias cl='clear'
 alias sc='screen'
