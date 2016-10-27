@@ -36,7 +36,7 @@ set imdisable
 
 " Leader {{{1
 " LeaderをSpaceに設定
-let mapleader = "\<Space>"
+let g:mapleader = "\<Space>"
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>q :q<CR>
 
