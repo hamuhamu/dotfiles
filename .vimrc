@@ -1,3 +1,8 @@
+" vimrcのアンチパターンをチェック
+" vint --color --style ~/.vimrc
+" @see https://github.com/Kuniwak/vint
+" @see http://qiita.com/Kuniwak/items/407ab494281427847af0
+"
 " init {{{1
 "====================
 set nocompatible
