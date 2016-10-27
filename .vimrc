@@ -5,7 +5,6 @@
 "
 " init {{{1
 "====================
-set nocompatible
 filetype off
 filetype plugin indent off
 
