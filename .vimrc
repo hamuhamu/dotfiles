@@ -1,3 +1,4 @@
+" {{{ vint
 " vimrcのアンチパターンをチェック
 " vint --color --style ~/.vimrc
 " @see https://github.com/Kuniwak/vint
