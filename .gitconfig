@@ -14,7 +14,7 @@
     dw = diff --color-words
     ds = diff --staged
     co = checkout
-    ci = commit
+    ci = commit -v
     make-pull-req = commit --allow-empty -m \"make pull request\"
     make-gitignore = !sh -c 'gibo ${0} > .gitignore'
     br = branch
