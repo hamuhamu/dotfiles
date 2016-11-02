@@ -1,6 +1,11 @@
+" {{{ vint
+" vimrcのアンチパターンをチェック
+" vint --color --style ~/.vimrc
+" @see https://github.com/Kuniwak/vint
+" @see http://qiita.com/Kuniwak/items/407ab494281427847af0
+"
 " init {{{1
 "====================
-set nocompatible
 filetype off
 filetype plugin indent off
 
@@ -9,7 +14,7 @@ let g:is_windows = has('win32') || has('win64')
 let g:is_unix = has('unix')
 let g:is_gui = has('gui_running')
 let g:is_terminal = !g:is_gui
-let g:is_unicode = (&termencoding ==# 'utf-8' || &encoding == 'utf-8') && !(exists('g:discard_unicode') && g:discard_unicode != 0)
+let g:is_unicode = (&termencoding ==# 'utf-8' || &encoding ==# 'utf-8') && !(exists('g:discard_unicode') && g:discard_unicode != 0)
 "
 " ビープ音を無効化
 set visualbell t_vb=
@@ -32,7 +37,7 @@ set imdisable
 
 " Leader {{{1
 " LeaderをSpaceに設定
-let mapleader = "\<Space>"
+let g:mapleader = "\<Space>"
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>q :q<CR>
 
