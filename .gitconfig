@@ -29,7 +29,10 @@
     recommit = commit --amend
     one-previous-commit-hard-reset = reset --hard HEAD^
 [core]
+    # 全gitプロジェクトに反映させる.gitconfig
     excludesfile = ~/.gitignore
+    # falseで日本語ファイルを文字化けせずに表示
+    autocrlf = false
     editor = vim -c \"set fenc=utf-8\"
 [color]
     ui = true
