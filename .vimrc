@@ -180,6 +180,9 @@ noremap k gk
 noremap ; :
 noremap : ;
 
+" 行末の改行文字を含まずにヤンクさせる
+nnoremap Y y$
+
 " 誤打が多いので、インタラクティブなExモードを無効にする
 nnoremap Q <Nop>
 " ウィンドウ移動をTabで行える
