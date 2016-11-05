@@ -119,6 +119,8 @@ set listchars=tab:>-,extends:<,trail:-
 " 対応するかっこを表示する
 set showmatch
 set completeopt=menu,preview
+" 一行の文字数が大きすぎても表示を行う
+set display=lastline
 " 矩形選択時のみ仮想編集できる
 set virtualedit=block
 " iTermのみ挿入時にカーソルを棒状にする
