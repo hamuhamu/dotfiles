@@ -1,6 +1,8 @@
 [push]
     default = matching
 [alias]
+    # aliasコマンドを表示
+    alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
     ad = add
     adA = add -A
     st = status
@@ -12,7 +14,7 @@
     dw = diff --color-words
     ds = diff --staged
     co = checkout
-    ci = commit
+    ci = commit -v
     make-pull-req = commit --allow-empty -m \"make pull request\"
     make-gitignore = !sh -c 'gibo ${0} > .gitignore'
     br = branch
@@ -24,12 +26,17 @@
         NEW_BRANCH_NAME=${0} && \
         git branch -m $CURRENT_BRANCH_NAME $NEW_BRANCH_NAME'
     graph = log --graph --date=short --decorate=short --pretty=format:'%Cgreen%h %Creset%cd %Cblue%cn %Cred%d %Creset%s'
+    log-detail = log --stat --decorate=short --pretty=format:'%C(yellow)%h %Cgreen%cr %Cblue%cn%Cred%d %Creset%s %C(cyan)%b'
+    log-merge = log --merges --pretty=format:'%C(yellow)%h %Cgreen%ci %Cblue%cn%Cred%d %Creset%s %C(cyan)%b'
     df-word = diff --word-diff
     browse = !hub browse
     recommit = commit --amend
     one-previous-commit-hard-reset = reset --hard HEAD^
 [core]
+    # 全gitプロジェクトに反映させる.gitconfig
     excludesfile = ~/.gitignore
+    # falseで日本語ファイルを文字化けせずに表示
+    autocrlf = false
     editor = vim -c \"set fenc=utf-8\"
 [color]
     ui = true
