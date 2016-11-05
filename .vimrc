@@ -48,6 +48,8 @@ set termencoding=utf-8
 set fileencodings=utf-8,iso-2022-jp,cp932,euc-jp,ucs-bom
 " vimrcのエンコード
 scriptencoding utf-8
+" 設定しないと◻や◯文字が崩れてしまう
+set ambiwidth=double
 
 " vimで編集中のファイルをエンコード変換をかけるコマンドをわかりやすくした
 " Usage :Encode euc-jp
