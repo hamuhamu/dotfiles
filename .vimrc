@@ -205,6 +205,10 @@ nnoremap <C-q><C-q> :qa<CR>
 nnoremap <C-w><C-w> :wa<CR>
 nnoremap <C-w><C-q> :wqa<CR>
 
+" 数字のインクリメントとデクリメント
+nnoremap + <C-a>
+nnoremap - <C-x>
+
 " clipbord copy
 nnoremap copy :w !pbcopy<CR>
 
