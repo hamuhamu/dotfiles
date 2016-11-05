@@ -325,7 +325,19 @@ let g:vdebug_force_ascii = 1
     " ダウンロード
     let g:EasyMotion_use_migemo = 1
 
-"}}}
+" }}}
+" インデントの可視化 {{{
+    " https://github.com/Yggdroot/indentLine
+    NeoBundle 'Yggdroot/indentLine'
+    " Vim インデントに色を付ける
+    let g:indentLine_color_term = 111
+    " GVim インデントに色を付ける
+    let g:indentLine_color_gui = '#708090'
+    " インデント可視化文字
+    let g:indentLine_char = '¦'
+    set list lcs=tab:\|\ " 設定の末尾にスペース
+
+" }}}
 " Indent Guides Config {{{
     NeoBundle 'junegunn/vim-easy-align'
     let g:indent_guides_enable_on_vim_startup = 1
