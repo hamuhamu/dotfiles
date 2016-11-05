@@ -118,6 +118,9 @@ set list
 set listchars=tab:>-,extends:<,trail:-
 " 対応するかっこを表示する
 set showmatch
+" showmatchがONである場合、対応するカッコの表示速度1(最速) = 0.1秒
+set matchtime=1
+
 set completeopt=menu,preview
 " 一行の文字数が大きすぎても表示を行う
 set display=lastline
