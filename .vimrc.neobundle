@@ -242,7 +242,10 @@ NeoBundle 'altercation/vim-colors-solarized'
 syntax enable
 set background=dark
 set t_Co=256
-
+" {{{ コンテキストによって filetype を自動的に切り換える
+    NeoBundle 'osyo-manga/vim-precious'
+    NeoBundle 'Shougo/context_filetype.vim'
+" }}}
 NeoBundle 'haya14busa/vim-migemo'
 " {{{ HEADからの差分を+-で表現してくれる
 NeoBundle 'airblade/vim-gitgutter'
