@@ -33,7 +33,8 @@ endif
 set backspace=indent,eol,start
 " normarmode japanese off
 set imdisable
-
+" スペルチェックで日本語がミススペル担ってしまう問題を回避
+set spelllang=en,cjk
 
 " Leader {{{1
 " LeaderをSpaceに設定
