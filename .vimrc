@@ -4,10 +4,21 @@
 " @see https://github.com/Kuniwak/vint
 " @see http://qiita.com/Kuniwak/items/407ab494281427847af0
 "
+" encoding {{{1
+"====================
+set encoding=utf-8
+set termencoding=utf-8
+set fileencodings=utf-8,iso-2022-jp,cp932,euc-jp,ucs-bom
+" encodingの後に宣言すること
+scriptencoding utf-8
+" 設定しないと◻や◯文字が崩れてしまう
+set ambiwidth=double
+
+" vimで編集中のファイルをエンコード変換をかけるコマンドをわかりやすくした
+" Usage :Encode euc-jp
+command! -nargs=1 Encode :e ++enc=<args>
 " init {{{1
 "====================
-" vimrcのエンコード scriptencodingは必ずvimrcの先頭で宣言すること
-scriptencoding utf-8
 filetype off
 filetype plugin indent off
 
@@ -44,17 +55,6 @@ let g:mapleader = "\<Space>"
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>q :q<CR>
 
-" encoding {{{1
-"====================
-set encoding=utf-8
-set termencoding=utf-8
-set fileencodings=utf-8,iso-2022-jp,cp932,euc-jp,ucs-bom
-" 設定しないと◻や◯文字が崩れてしまう
-set ambiwidth=double
-
-" vimで編集中のファイルをエンコード変換をかけるコマンドをわかりやすくした
-" Usage :Encode euc-jp
-command! -nargs=1 Encode :e ++enc=<args>
 
 
 " NeoBundle {{{1
