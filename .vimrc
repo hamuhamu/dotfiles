@@ -6,6 +6,8 @@
 "
 " init {{{1
 "====================
+" vimrcのエンコード scriptencodingは必ずvimrcの先頭で宣言すること
+scriptencoding utf-8
 filetype off
 filetype plugin indent off
 
@@ -47,8 +49,6 @@ nnoremap <Leader>q :q<CR>
 set encoding=utf-8
 set termencoding=utf-8
 set fileencodings=utf-8,iso-2022-jp,cp932,euc-jp,ucs-bom
-" vimrcのエンコード
-scriptencoding utf-8
 " 設定しないと◻や◯文字が崩れてしまう
 set ambiwidth=double
 
