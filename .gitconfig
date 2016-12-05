@@ -34,6 +34,7 @@
     df-word = diff --word-diff
     browse = !hub browse
     recommit = commit --amend
+    # 一つ前のコミットを削除
     one-previous-commit-hard-reset = reset --hard HEAD^
 [core]
     # 全gitプロジェクトに反映させる.gitconfig
