@@ -19,7 +19,7 @@
     make-gitignore = !sh -c 'gibo ${0} > .gitignore'
     br = branch
     delete-branch = !sh -c 'git branch -D ${0}'
-    # で引数が指定されていなければブランチ名をリネームしない
+    # 引数が指定されていなければブランチ名をリネームしない
     rename-branch = !sh -c '   \
         test "${0}" != "sh" && \
         CURRENT_BRANCH_NAME=`git rev-parse --abbrev-ref HEAD` && \
