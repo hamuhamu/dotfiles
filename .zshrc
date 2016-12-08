@@ -285,7 +285,7 @@ alias tm='tmux'
 alias reload="source $HOME/.zprofile"
 alias ps-kill='kill -9'
 alias showZenv="cat $HOME/.zshenv"
-alias show-listen-port='lsof -i -P | grep "LISTEN"'
+alias show-listen-port='lsof -i -P | grep LISTEN'
 
 alias -g A='| ag'
 alias -g G='| grep'
