@@ -52,3 +52,5 @@
     path = ~/.gitconfig.local
 [commit]
     template = ~/.gitcommit.template
+[merge]
+	tool = vimdiff
