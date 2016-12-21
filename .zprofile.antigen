@@ -26,5 +26,8 @@ antigen bundle mollifier/cd-gitroot
 # bd: back directory 親ディレクトリにcdできる
 # http://blog.glidenote.com/blog/2014/05/15/zsh-bd/
 antigen bundle Tarrasch/zsh-bd
+# コマンドを絞りこめる
+# http://qiita.com/termoshtt/items/68a5372a43543037667f
+antigen bundle zsh-users/zaw
 
 antigen-apply
