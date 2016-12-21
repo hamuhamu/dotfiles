@@ -23,5 +23,8 @@ antigen bundle mollifier/cd-bookmark
 # gitのプロジェクトルートにディレクトリ移動できる
 # http://qiita.com/mollifier/items/cf0263dccc112ab8b87d
 antigen bundle mollifier/cd-gitroot
+# bd: back directory 親ディレクトリにcdできる
+# http://blog.glidenote.com/blog/2014/05/15/zsh-bd/
+antigen bundle Tarrasch/zsh-bd
 
 antigen-apply
