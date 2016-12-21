@@ -17,8 +17,10 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle m4i/cdd
 # https://github.com/github/hub
 antigen bundle github/hub
+# よく移動するディレクトリにブックマークをつけて移動を簡単にする
 # http://qiita.com/mollifier/items/46b080f9a5ca9f29674e
 antigen bundle mollifier/cd-bookmark
+# gitのプロジェクトルートにディレクトリ移動できる
 # http://qiita.com/mollifier/items/cf0263dccc112ab8b87d
 antigen bundle mollifier/cd-gitroot
 
