@@ -19,5 +19,7 @@ antigen bundle m4i/cdd
 antigen bundle github/hub
 # http://qiita.com/mollifier/items/46b080f9a5ca9f29674e
 antigen bundle mollifier/cd-bookmark
+# http://qiita.com/mollifier/items/cf0263dccc112ab8b87d
+antigen bundle mollifier/cd-gitroot
 
 antigen-apply
