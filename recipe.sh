@@ -19,6 +19,7 @@ brew cask install virtualbox-extension-pack
 brew cask install lastpass
 brew cask install google-japanese-ime
 brew cask install phpstorm
+brew cask install sqleditor
 
 brew install tig
 brew install ansible
