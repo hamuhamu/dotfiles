@@ -234,6 +234,9 @@ vnoremap <silent> P "0p`]
 nnoremap <expr> c* ':%s ;\<' . expand('<cword>') . '\>;'
 vnoremap <expr> c* ':s ;\<' . expand('<cword>') . '\>;'
 
+" 末尾に空白文字を２つつける
+nnoremap <C-a> A<Space><Space><Esc>
+
 filetype plugin indent on
 
 " template {{{1
