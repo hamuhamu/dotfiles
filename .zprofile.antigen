@@ -29,5 +29,9 @@ antigen bundle Tarrasch/zsh-bd
 # コマンドを絞りこめる
 # http://qiita.com/termoshtt/items/68a5372a43543037667f
 antigen bundle zsh-users/zaw
+# 絵文字の補完ができる <C-s>
+# jqに依存するので、brew install jqする
+# https://github.com/b4b4r07/emoji-cli
+antigen bundle b4b4r07/emoji-cli
 
 antigen-apply

@@ -20,6 +20,9 @@ brew cask install lastpass
 brew cask install google-japanese-ime
 brew cask install phpstorm
 brew cask install sqleditor
+brew install jq
+# https://github.com/mrowa44/emojify
+brew install emojify
 
 brew install tig
 brew install ansible
