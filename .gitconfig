@@ -38,6 +38,9 @@
     one-previous-commit-hard-reset = reset --hard HEAD^
     # コミットを削除(ワークスペースに残らない)
     hard-reset = reset --hard
+     # コミット番号からPRを特定する
+     # git show-pr ea3280d2
+    show-pr = !"f() { git log --merges --oneline --reverse --ancestry-path $1...master | grep 'Merge pull request #' | head -n 1; }; f"
 [core]
     # 全gitプロジェクトに反映させる.gitconfig
     excludesfile = ~/.gitignore
