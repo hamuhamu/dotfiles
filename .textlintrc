@@ -1,4 +1,10 @@
 {
   "filters": {},
-  "rules": {}
+  // 使用可能なルールは@seeを参照のこと
+  // @see https://github.com/textlint/textlint/wiki/Collection-of-textlint-rule
+  "rules": {
+      "max-ten": {
+        "max" : 3
+    }
+  }
 }

@@ -73,3 +73,5 @@ chmod 775 ~/bin/phpunit
 # TextLint
 # @https://github.com/textlint/textlint
 npm install textlint -g
+# @see https://github.com/textlint-ja/textlint-rule-max-ten
+npm install textlint-rule-max-ten -g
