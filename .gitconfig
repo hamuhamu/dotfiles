@@ -15,6 +15,8 @@
     ds = diff --staged
     co = checkout
     ci = commit -v
+    # @see http://qiita.com/mabots/items/76d48aa33720287253bf
+    ps = push origin HEAD
     make-pull-req = commit --allow-empty -m \"make pull request\"
     make-gitignore = !sh -c 'gibo ${0} > .gitignore'
     br = branch
