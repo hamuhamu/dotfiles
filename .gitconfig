@@ -59,4 +59,4 @@
 [commit]
     template = ~/.gitcommit.template
 [merge]
-	tool = vimdiff
+    tool = vimdiff
