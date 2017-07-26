@@ -17,7 +17,10 @@
     ci = commit -v
     # @see http://qiita.com/mabots/items/76d48aa33720287253bf
     ps = push origin HEAD
-    pl = pull origin HEAD
+    # git pull origin current_branch_name
+    pl = !sh -c '   \
+        CURRENT_BRANCH_NAME=`git rev-parse --abbrev-ref HEAD` && \
+        git pull origin $CURRENT_BRANCH_NAME'
     make-pull-req = commit --allow-empty -m \"make pull request\"
     make-gitignore = !sh -c 'gibo ${0} > .gitignore'
     br = branch
