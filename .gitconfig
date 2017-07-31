@@ -13,7 +13,7 @@
     # 単語単位のdiff
     dw = diff --color-words
     ds = diff --staged
-    co = checkout
+    co = !sh -c 'git checkout $(git branch | peco)'
     ci = commit -v
     # @see http://qiita.com/mabots/items/76d48aa33720287253bf
     ps = push origin HEAD
