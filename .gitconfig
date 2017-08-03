@@ -17,6 +17,7 @@
     # checkout branchの略
     cb = !sh -c 'git checkout $(git branch | peco)'
     ci = commit -v
+    mg = !sh -c 'git merge $(git branch | peco)'
     # @see http://qiita.com/mabots/items/76d48aa33720287253bf
     ps = push origin HEAD
     # git pull origin current_branch_name
