@@ -28,6 +28,8 @@
     make-gitignore = !sh -c 'gibo ${0} > .gitignore'
     br = branch
     delete-branch = !sh -c 'git branch -D ${0}'
+    # マージ済みのブランチを削除
+    delete-merged-branch = !git branch --merged | grep -v master | grep -v '*' | xargs -I % git branch -d %
     # 引数が指定されていなければブランチ名をリネームしない
     rename-branch = !sh -c '   \
         test "${0}" != "sh" && \
