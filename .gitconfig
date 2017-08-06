@@ -24,10 +24,16 @@
     pl = !sh -c '   \
         CURRENT_BRANCH_NAME=`git rev-parse --abbrev-ref HEAD` && \
         git pull origin $CURRENT_BRANCH_NAME'
-    make-pull-req = commit --allow-empty -m \"make pull request\"
+    # git make-pull-req 新しく作成するブランチ名
+    # 新しくブランチを作成しPRを作る
+    make-pull-req = !sh -c '\
+        test "${0}" != "sh" && \
+        git checkout -b ${0} && \
+        git commit --allow-empty -m \"make pull request\" && \
+        git push origin HEAD'
     make-gitignore = !sh -c 'gibo ${0} > .gitignore'
     br = branch
-    delete-branch = !sh -c 'git branch -D ${0}'
+    delete-branch = !sh -c 'git branch -D $(git branch | peco)'
     # マージ済みのブランチを削除
     delete-merged-branch = !git branch --merged | grep -v master | grep -v '*' | xargs -I % git branch -d %
     # 引数が指定されていなければブランチ名をリネームしない
