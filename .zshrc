@@ -297,6 +297,8 @@ alias -g L='| less'
 alias -g H='| head'
 alias -g T='| tail'
 alias -g W='| wc'
+alias -g P='| peco'
+alias -g Px='| peco | xargs '
 
 # Docker
 alias d='docker'
