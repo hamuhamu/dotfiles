@@ -286,7 +286,8 @@ alias reload="source $HOME/.zprofile"
 alias ps-kill='kill -9'
 alias showZenv="cat $HOME/.zshenv"
 alias show-listen-port='lsof -i -P | grep LISTEN'
-alias vimf="find . -name '*' | peco | xargs -o vim"
+# vim finderの略
+alias vf="find . -name '*' | peco | xargs -o vim"
 
 alias -g A='| ag'
 alias -g G='| grep'
