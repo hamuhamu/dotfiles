@@ -287,7 +287,7 @@ alias ps-kill='kill -9'
 alias showZenv="cat $HOME/.zshenv"
 alias show-listen-port='lsof -i -P | grep LISTEN'
 # vim finderの略
-alias vf="find . -name '*' | peco | xargs -o vim"
+alias vf="ag -l | peco | xargs -o vim"
 
 alias -g A='| ag'
 alias -g G='| grep'
