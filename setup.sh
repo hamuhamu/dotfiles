@@ -37,5 +37,10 @@ ln -sfn ${HOME}/dotfiles/.vim/after/ftplugin ${HOME}/.vim/after/ftplugin
 if [ `uname` = "Darwin" ]; then
     uname
     # Mac OS X用の設定
-    ./recipe.sh
+
+    # brewがinstallされていなければ、インストールする
+    which brew
+    if [ $? -eq 1 ]; then
+        /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    fi
 fi
