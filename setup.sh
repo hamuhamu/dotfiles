@@ -37,4 +37,5 @@ ln -sfn ${HOME}/dotfiles/.vim/after/ftplugin ${HOME}/.vim/after/ftplugin
 if [ `uname` = "Darwin" ]; then
     uname
     # Mac OS X用の設定
+    ./recipe.sh
 fi
