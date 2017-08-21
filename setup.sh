@@ -29,7 +29,6 @@ if [[ ! -d ${HOME}/.vim/bundle/neobundle.vim ]]; then
     vim -c ':BundleInstall!' -c ':q!'
 fi
 
-ln -sfn ${HOME}/dotfiles/.vim/template ${HOME}/.vim/template
 ln -sfn ${HOME}/dotfiles/.vim/snippets ${HOME}/.vim/snippets
 
 mkdir -p ${HOME}/.vim/after/
