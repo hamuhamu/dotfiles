@@ -18,6 +18,7 @@ brew cask install virtualbox
 brew cask install virtualbox-extension-pack
 brew cask install lastpass
 brew cask install google-japanese-ime
+brew cask install google-chrome
 brew cask install phpstorm
 brew install jq
 # https://github.com/mrowa44/emojify
