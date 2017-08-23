@@ -62,8 +62,8 @@ ghq get https://github.com/altercation/solarized.git
 defaults write com.apple.desktopservices DSDontWriteNetworkStores true
 
 # composerをインストール
-curl -sS https://getcomposer.org/installer | php -- --install-dir=./bin
-mv ./bin/{composer.phar,composer}
+curl -sS https://getcomposer.org/installer | php -- --install-dir=~/bin
+mv ~/bin/{composer.phar,composer}
 
 # phpunitインストール
 curl -sSL https://phar.phpunit.de/phpunit.phar > ~/bin/phpunit
