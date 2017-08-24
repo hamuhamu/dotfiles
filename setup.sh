@@ -29,8 +29,6 @@ if [[ ! -d ${HOME}/.vim/bundle/neobundle.vim ]]; then
     vim -c ':BundleInstall!' -c ':q!'
 fi
 
-ln -sfn ${HOME}/dotfiles/.vim/snippets ${HOME}/.vim/snippets
-
 mkdir -p ${HOME}/.vim/after/
 ln -sfn ${HOME}/dotfiles/.vim/after/ftplugin ${HOME}/.vim/after/ftplugin
 
