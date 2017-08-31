@@ -29,9 +29,6 @@ if [[ ! -d ${HOME}/.vim/bundle/neobundle.vim ]]; then
     vim -c ':BundleInstall!' -c ':q!'
 fi
 
-mkdir -p ${HOME}/.vim/after/
-ln -sfn ${HOME}/dotfiles/.vim/after/ftplugin ${HOME}/.vim/after/ftplugin
-
 if [ `uname` = "Darwin" ]; then
     uname
     # Mac OS X用の設定
