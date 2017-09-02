@@ -34,11 +34,6 @@ brew install peco
 
 brew install hub
 
-# phpの>=5.69をインストールする際に使う
-brew install libjpeg
-brew install re2c
-brew install libpng
-
 brew install tree
 brew install vim
 brew install wget
