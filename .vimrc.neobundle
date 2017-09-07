@@ -231,8 +231,6 @@ NeoBundle 'tmhedberg/matchit'
 " Uppercase/Lowercase ignore
 let b:match_ignorecase = 1
 
-" 2015/0726 現在バグってるようなのでコメントアウトしておく
-" NeoBundle 'Lokaltog/vim-powerline'
 NeoBundle 'alpaca-tc/alpaca_powertabline'
 set noshowmode
 
