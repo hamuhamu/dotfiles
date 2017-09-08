@@ -72,9 +72,6 @@ REPORTTIME=3
 ######################################
 # complete
 ######################################
-# mkdir $HOME/.zsh
-# cd $HOME/.zsh
-# git clone git@github.com:zsh-users/zsh-completions.git
 fpath=($HOME/.zsh/zsh-completions/src(N-/) $fpath)
 autoload -Uz compinit; compinit -u
 # complete after = --prefix=/usr => --prefix=<Tab>
