@@ -55,8 +55,6 @@ let g:mapleader = "\<Space>"
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>q :q<CR>
 
-
-
 " NeoBundle {{{1
 "====================
 
@@ -93,7 +91,6 @@ set autoindent
 set smartindent
 " C言語ライクインデント
 set cindent
-
 
 " view {{{1
 "====================
@@ -141,7 +138,6 @@ set wildmode=full:list
 set history=100
 " カーソルが何行目の何列目か表示
 set ruler
-
 
 " string operation {{{1
 "====================
@@ -235,15 +231,6 @@ nnoremap <expr> c* ':%s ;\<' . expand('<cword>') . '\>;'
 vnoremap <expr> c* ':s ;\<' . expand('<cword>') . '\>;'
 
 filetype plugin indent on
-
-" template {{{1
-
-" BufNewFileイベントは、FileTypeイベント(php,vimなど)の前に実行されるので.vimrcに書くしか無い
-augroup Template_PHPUnit
-    autocmd!
-    autocmd BufNewFile *Test.php 0read $HOME/.vim/template/php/PhpUnitTest.php
-augroup END
-
 
 " .vimrc.local {{{1
 
