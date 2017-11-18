@@ -299,5 +299,6 @@ alias dls='docker images' # docker ls的な意味
 alias dps='docker ps -a'
 alias de='docker exec -it'
 alias drm='docker ps -qa | xargs docker rm'
+alias drm_all='docker rmi $(sudo docker images -q)'
 alias dm='docker-machine'
 alias dme='eval $(docker-machine env default)'
