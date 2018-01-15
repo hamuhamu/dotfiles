@@ -275,6 +275,7 @@ alias vi='vim'
 alias cl='clear'
 alias sc='screen'
 alias tm='tmux'
+alias ag='ag --hidden'
 alias reload="source $HOME/.zprofile"
 alias ps-kill='kill -9'
 alias showZenv="cat $HOME/.zshenv"
@@ -282,7 +283,7 @@ alias show-listen-port='lsof -i -P | grep LISTEN'
 # vim finderの略
 alias vf="ag -l | peco | xargs -o vim"
 
-alias -g A='| ag'
+alias -g A='| ag --hidden'
 alias -g G='| grep'
 alias -g X='| xargs'
 alias -g C='| cat'
