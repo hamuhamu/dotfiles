@@ -24,13 +24,25 @@
     pl = !sh -c '   \
         CURRENT_BRANCH_NAME=`git rev-parse --abbrev-ref HEAD` && \
         git pull origin $CURRENT_BRANCH_NAME'
-    # git make-pull-req 新しく作成するブランチ名
-    # 新しくブランチを作成しPRを作る
-    make-pull-req = !sh -c '\
+
+    # Usage:
+    #   git make-feature-pr issue番号
+    #   新しくfeatureブランチを作成しPRを作る
+    make-feature-pr = !sh -c '\
         test "${0}" != "sh" && \
-        git checkout -b ${0} && \
+        git checkout -b "feature/${0}" && \
         git commit --allow-empty -m \"make pull request\" && \
         git push origin HEAD'
+
+    # Usage:
+    #   git make-hotfix-pr hotfixブランチ名
+    #   新しくhotfixブランチを作成しPRを作る
+    make-hotfix-pr = !sh -c '\
+        test "${0}" != "sh" && \
+        git checkout -b "hotfix/${0}" && \
+        git commit --allow-empty -m \"make pull request\" && \
+        git push origin HEAD'
+
     make-gitignore = !sh -c 'gibo ${0} > .gitignore'
     br = branch
     delete-branch = !sh -c 'git branch -D $(git branch | peco)'
