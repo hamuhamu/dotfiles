@@ -21,7 +21,7 @@ indent_size = 2
 [*.js]
 indent_size = 4
 
-[*.html]
+[*.{html,erb}]
 indent_size = 2
 
 [*.go]
